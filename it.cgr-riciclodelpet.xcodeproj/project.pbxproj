@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F489DCBC1FF6945B00E61B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */; };
+		F489DCBE1FF6945B00E61B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBD1FF6945B00E61B72 /* ViewController.swift */; };
+		F489DCC11FF6945B00E61B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F489DCBF1FF6945B00E61B72 /* Main.storyboard */; };
+		F489DCC31FF6945B00E61B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F489DCC21FF6945B00E61B72 /* Assets.xcassets */; };
+		F489DCC61FF6945B00E61B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F489DCC41FF6945B00E61B72 /* LaunchScreen.storyboard */; };
+		F489DCD11FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCD01FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift */; };
+		F489DCDC1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCDB1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F489DCCD1FF6945B00E61B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F489DCB01FF6945B00E61B72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F489DCB71FF6945B00E61B72;
+			remoteInfo = "it.cgr-riciclodelpet";
+		};
+		F489DCD81FF6945B00E61B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F489DCB01FF6945B00E61B72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F489DCB71FF6945B00E61B72;
+			remoteInfo = "it.cgr-riciclodelpet";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F489DCB81FF6945B00E61B72 /* it.cgr-riciclodelpet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "it.cgr-riciclodelpet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F489DCBD1FF6945B00E61B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F489DCC01FF6945B00E61B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F489DCC21FF6945B00E61B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F489DCC51FF6945B00E61B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F489DCC71FF6945B00E61B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F489DCCC1FF6945B00E61B72 /* it.cgr-riciclodelpetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "it.cgr-riciclodelpetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F489DCD01FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = it_cgr_riciclodelpetTests.swift; sourceTree = "<group>"; };
+		F489DCD21FF6945B00E61B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F489DCD71FF6945B00E61B72 /* it.cgr-riciclodelpetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "it.cgr-riciclodelpetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F489DCDB1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = it_cgr_riciclodelpetUITests.swift; sourceTree = "<group>"; };
+		F489DCDD1FF6945B00E61B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F489DCB51FF6945B00E61B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F489DCC91FF6945B00E61B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F489DCD41FF6945B00E61B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F489DCAF1FF6945B00E61B72 = {
+			isa = PBXGroup;
+			children = (
+				F489DCBA1FF6945B00E61B72 /* it.cgr-riciclodelpet */,
+				F489DCCF1FF6945B00E61B72 /* it.cgr-riciclodelpetTests */,
+				F489DCDA1FF6945B00E61B72 /* it.cgr-riciclodelpetUITests */,
+				F489DCB91FF6945B00E61B72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F489DCB91FF6945B00E61B72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F489DCB81FF6945B00E61B72 /* it.cgr-riciclodelpet.app */,
+				F489DCCC1FF6945B00E61B72 /* it.cgr-riciclodelpetTests.xctest */,
+				F489DCD71FF6945B00E61B72 /* it.cgr-riciclodelpetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F489DCBA1FF6945B00E61B72 /* it.cgr-riciclodelpet */ = {
+			isa = PBXGroup;
+			children = (
+				F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */,
+				F489DCBD1FF6945B00E61B72 /* ViewController.swift */,
+				F489DCBF1FF6945B00E61B72 /* Main.storyboard */,
+				F489DCC21FF6945B00E61B72 /* Assets.xcassets */,
+				F489DCC41FF6945B00E61B72 /* LaunchScreen.storyboard */,
+				F489DCC71FF6945B00E61B72 /* Info.plist */,
+			);
+			path = "it.cgr-riciclodelpet";
+			sourceTree = "<group>";
+		};
+		F489DCCF1FF6945B00E61B72 /* it.cgr-riciclodelpetTests */ = {
+			isa = PBXGroup;
+			children = (
+				F489DCD01FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift */,
+				F489DCD21FF6945B00E61B72 /* Info.plist */,
+			);
+			path = "it.cgr-riciclodelpetTests";
+			sourceTree = "<group>";
+		};
+		F489DCDA1FF6945B00E61B72 /* it.cgr-riciclodelpetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F489DCDB1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift */,
+				F489DCDD1FF6945B00E61B72 /* Info.plist */,
+			);
+			path = "it.cgr-riciclodelpetUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F489DCB71FF6945B00E61B72 /* it.cgr-riciclodelpet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F489DCE01FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpet" */;
+			buildPhases = (
+				F489DCB41FF6945B00E61B72 /* Sources */,
+				F489DCB51FF6945B00E61B72 /* Frameworks */,
+				F489DCB61FF6945B00E61B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "it.cgr-riciclodelpet";
+			productName = "it.cgr-riciclodelpet";
+			productReference = F489DCB81FF6945B00E61B72 /* it.cgr-riciclodelpet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F489DCCB1FF6945B00E61B72 /* it.cgr-riciclodelpetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F489DCE31FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpetTests" */;
+			buildPhases = (
+				F489DCC81FF6945B00E61B72 /* Sources */,
+				F489DCC91FF6945B00E61B72 /* Frameworks */,
+				F489DCCA1FF6945B00E61B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F489DCCE1FF6945B00E61B72 /* PBXTargetDependency */,
+			);
+			name = "it.cgr-riciclodelpetTests";
+			productName = "it.cgr-riciclodelpetTests";
+			productReference = F489DCCC1FF6945B00E61B72 /* it.cgr-riciclodelpetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F489DCD61FF6945B00E61B72 /* it.cgr-riciclodelpetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F489DCE61FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpetUITests" */;
+			buildPhases = (
+				F489DCD31FF6945B00E61B72 /* Sources */,
+				F489DCD41FF6945B00E61B72 /* Frameworks */,
+				F489DCD51FF6945B00E61B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F489DCD91FF6945B00E61B72 /* PBXTargetDependency */,
+			);
+			name = "it.cgr-riciclodelpetUITests";
+			productName = "it.cgr-riciclodelpetUITests";
+			productReference = F489DCD71FF6945B00E61B72 /* it.cgr-riciclodelpetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F489DCB01FF6945B00E61B72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Alberto Rimini";
+				TargetAttributes = {
+					F489DCB71FF6945B00E61B72 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					F489DCCB1FF6945B00E61B72 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F489DCB71FF6945B00E61B72;
+					};
+					F489DCD61FF6945B00E61B72 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F489DCB71FF6945B00E61B72;
+					};
+				};
+			};
+			buildConfigurationList = F489DCB31FF6945B00E61B72 /* Build configuration list for PBXProject "it.cgr-riciclodelpet" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F489DCAF1FF6945B00E61B72;
+			productRefGroup = F489DCB91FF6945B00E61B72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F489DCB71FF6945B00E61B72 /* it.cgr-riciclodelpet */,
+				F489DCCB1FF6945B00E61B72 /* it.cgr-riciclodelpetTests */,
+				F489DCD61FF6945B00E61B72 /* it.cgr-riciclodelpetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F489DCB61FF6945B00E61B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F489DCC61FF6945B00E61B72 /* LaunchScreen.storyboard in Resources */,
+				F489DCC31FF6945B00E61B72 /* Assets.xcassets in Resources */,
+				F489DCC11FF6945B00E61B72 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F489DCCA1FF6945B00E61B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F489DCD51FF6945B00E61B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F489DCB41FF6945B00E61B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F489DCBE1FF6945B00E61B72 /* ViewController.swift in Sources */,
+				F489DCBC1FF6945B00E61B72 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F489DCC81FF6945B00E61B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F489DCD11FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F489DCD31FF6945B00E61B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F489DCDC1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F489DCCE1FF6945B00E61B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F489DCB71FF6945B00E61B72 /* it.cgr-riciclodelpet */;
+			targetProxy = F489DCCD1FF6945B00E61B72 /* PBXContainerItemProxy */;
+		};
+		F489DCD91FF6945B00E61B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F489DCB71FF6945B00E61B72 /* it.cgr-riciclodelpet */;
+			targetProxy = F489DCD81FF6945B00E61B72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F489DCBF1FF6945B00E61B72 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F489DCC01FF6945B00E61B72 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F489DCC41FF6945B00E61B72 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F489DCC51FF6945B00E61B72 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F489DCDE1FF6945B00E61B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F489DCDF1FF6945B00E61B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F489DCE11FF6945B00E61B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "it.cgr-riciclodelpet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F489DCE21FF6945B00E61B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "it.cgr-riciclodelpet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F489DCE41FF6945B00E61B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "it.cgr-riciclodelpetTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/it.cgr-riciclodelpet.app/it.cgr-riciclodelpet";
+			};
+			name = Debug;
+		};
+		F489DCE51FF6945B00E61B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "it.cgr-riciclodelpetTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/it.cgr-riciclodelpet.app/it.cgr-riciclodelpet";
+			};
+			name = Release;
+		};
+		F489DCE71FF6945B00E61B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "it.cgr-riciclodelpetUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "it.cgr-riciclodelpet";
+			};
+			name = Debug;
+		};
+		F489DCE81FF6945B00E61B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "it.cgr-riciclodelpetUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "it.cgr-riciclodelpet";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F489DCB31FF6945B00E61B72 /* Build configuration list for PBXProject "it.cgr-riciclodelpet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F489DCDE1FF6945B00E61B72 /* Debug */,
+				F489DCDF1FF6945B00E61B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F489DCE01FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F489DCE11FF6945B00E61B72 /* Debug */,
+				F489DCE21FF6945B00E61B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F489DCE31FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F489DCE41FF6945B00E61B72 /* Debug */,
+				F489DCE51FF6945B00E61B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F489DCE61FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F489DCE71FF6945B00E61B72 /* Debug */,
+				F489DCE81FF6945B00E61B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F489DCB01FF6945B00E61B72 /* Project object */;
+}
