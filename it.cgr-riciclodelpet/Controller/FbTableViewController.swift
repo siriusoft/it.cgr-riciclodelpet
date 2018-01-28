@@ -89,22 +89,31 @@ class FbTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListCell", for: indexPath)
         let item = listaProduzione[indexPath.row]
         cell.textLabel?.text = item.lotto + ", " + item.codiceProdotto
-        cell.detailTextLabel?.text = String(item.quantity.count) + " colli"
+        cell.detailTextLabel?.text = String(calcoloQuantitaLotto(dettaglioLotto: item.quantity)) + " Kg, " + String(item.quantity.count) + " colli"
         //cell.accessoryType = item.completed ? .checkmark : .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "Ricettasegue", sender: listaProduzione[indexPath.row])
+        performSegue(withIdentifier: "ricettaSegue", sender: listaProduzione[indexPath.row])
     }
+    
     override func prepare(for segue: UIStoryboardSegue , sender: Any? ) {
-        if segue.identifier == "Ricettasegue"{
-        let vc = segue.destination as! RicettaTableViewController
-        vc.produzioneLotto = sender as? DettaglioProduzione
-       
+        if segue.identifier == "ricettaSegue" {
+            let vc = segue.destination as! RicettaTableViewController
+            vc.produzioneLotto = sender as? DettaglioProduzione
         }
-        
+        if segue.identifier == "schedaTecnicaSegue" {
+            let vc = segue.destination as! SchedaTecnicaViewController
+            vc.produzioneLotto = sender as? DettaglioProduzione
+        }
     }
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        performSegue(withIdentifier: "schedaTecnicaSegue", sender: listaProduzione[indexPath.row])
+    }
+    
+    
+     
     
 
    
@@ -176,5 +185,14 @@ class FbTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    func calcoloQuantitaLotto(dettaglioLotto: [Int]) -> Int {
+        var sum = 0
+        for i in 0...dettaglioLotto.count-1 {
+             sum += dettaglioLotto[i]
+        }
+        return sum
+        
+    }
 
 }

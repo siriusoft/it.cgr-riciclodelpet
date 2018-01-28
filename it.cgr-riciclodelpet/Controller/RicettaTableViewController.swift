@@ -47,8 +47,8 @@ class RicettaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Ricettacell", for: indexPath)
         
-        cell.textLabel?.text = String(describing: produzioneLotto?.quantity[indexPath.row])
-        cell.detailTextLabel?.text = String(describing: produzioneLotto?.note[indexPath.row])
+        cell.textLabel!.text = "N. \(indexPath.row + 1) - " + String(describing: produzioneLotto!.quantity[indexPath.row]) + " \(produzioneLotto!.umisura)"
+        cell.detailTextLabel!.text = String(describing: produzioneLotto!.note[indexPath.row])
         
 
         return cell
