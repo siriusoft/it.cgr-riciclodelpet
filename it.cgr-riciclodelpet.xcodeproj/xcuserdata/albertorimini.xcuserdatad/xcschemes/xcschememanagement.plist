@@ -7,7 +7,25 @@
 		<key>it.cgr-riciclodelpet.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F489DCB71FF6945B00E61B72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F489DCCB1FF6945B00E61B72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F489DCD61FF6945B00E61B72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

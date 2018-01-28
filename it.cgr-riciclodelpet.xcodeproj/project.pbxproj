@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CB8AD418F7E460578204D25 /* Pods_it_cgr_riciclodelpet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCDAD680CF600C8217A7172 /* Pods_it_cgr_riciclodelpet.framework */; };
+		78B026C9F71079C6BA7AD998 /* Pods_it_cgr_riciclodelpetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E4579094257060D2AD375D /* Pods_it_cgr_riciclodelpetTests.framework */; };
+		D8D1462B5A30944033BA531A /* Pods_it_cgr_riciclodelpetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433014764FB72D05B1947CF9 /* Pods_it_cgr_riciclodelpetUITests.framework */; };
+		F40F28171FFD262100935D7B /* ItemRicetta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F28161FFD262100935D7B /* ItemRicetta.swift */; };
+		F40F28181FFD262100935D7B /* ItemRicetta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F28161FFD262100935D7B /* ItemRicetta.swift */; };
+		F40F28191FFD262100935D7B /* ItemRicetta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F28161FFD262100935D7B /* ItemRicetta.swift */; };
+		F40F281B1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */; };
+		F40F281C1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */; };
+		F40F281D1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */; };
 		F489DCBC1FF6945B00E61B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */; };
 		F489DCBE1FF6945B00E61B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBD1FF6945B00E61B72 /* ViewController.swift */; };
 		F489DCC11FF6945B00E61B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F489DCBF1FF6945B00E61B72 /* Main.storyboard */; };
@@ -14,6 +23,27 @@
 		F489DCC61FF6945B00E61B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F489DCC41FF6945B00E61B72 /* LaunchScreen.storyboard */; };
 		F489DCD11FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCD01FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift */; };
 		F489DCDC1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCDB1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift */; };
+		F489DCEA1FF6BA4B00E61B72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */; };
+		F489DCEB1FF6BA4B00E61B72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */; };
+		F489DCEC1FF6BA4B00E61B72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */; };
+		F489DCEE1FF6E88300E61B72 /* FbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */; };
+		F489DCEF1FF6E88300E61B72 /* FbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */; };
+		F489DCF01FF6E88300E61B72 /* FbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */; };
+		F489DCF61FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */; };
+		F489DCF71FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */; };
+		F489DCF81FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */; };
+		F4AC890C200A991E0049D188 /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E800482003201A002347DE /* InsertDataViewController.swift */; };
+		F4AC890D200A991E0049D188 /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E800482003201A002347DE /* InsertDataViewController.swift */; };
+		F4AC890E200A99240049D188 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBD1FF6945B00E61B72 /* ViewController.swift */; };
+		F4AC890F200A99240049D188 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBD1FF6945B00E61B72 /* ViewController.swift */; };
+		F4AC8910200A9A7C0049D188 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC890A200A98670049D188 /* WelcomeViewController.swift */; };
+		F4AC8912200AAD6C0049D188 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8911200AAD6C0049D188 /* RegisterViewController.swift */; };
+		F4AC8914200AB14A0049D188 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8913200AB14A0049D188 /* LogInViewController.swift */; };
+		F4E800492003201A002347DE /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E800482003201A002347DE /* InsertDataViewController.swift */; };
+		F4F9CA38201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA37201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift */; };
+		F4F9CA3C201DEC8C000698C6 /* DettaglioProduzione.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */; };
+		F4F9CA3D201DEC92000698C6 /* DettaglioProduzione.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */; };
+		F4F9CA3E201DEC92000698C6 /* DettaglioProduzione.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +64,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A5C1789106A4C7E1C72CFA1 /* Pods-it.cgr-riciclodelpet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-it.cgr-riciclodelpet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-it.cgr-riciclodelpet/Pods-it.cgr-riciclodelpet.debug.xcconfig"; sourceTree = "<group>"; };
+		2AB661F2E3C894D22D033C74 /* Pods-it.cgr-riciclodelpet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-it.cgr-riciclodelpet.release.xcconfig"; path = "Pods/Target Support Files/Pods-it.cgr-riciclodelpet/Pods-it.cgr-riciclodelpet.release.xcconfig"; sourceTree = "<group>"; };
+		433014764FB72D05B1947CF9 /* Pods_it_cgr_riciclodelpetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_it_cgr_riciclodelpetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		584168FCDF10F84625F8689F /* Pods-it.cgr-riciclodelpetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-it.cgr-riciclodelpetTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-it.cgr-riciclodelpetTests/Pods-it.cgr-riciclodelpetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81FB5D38395DDC1BF0AE9D44 /* Pods-it.cgr-riciclodelpetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-it.cgr-riciclodelpetUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-it.cgr-riciclodelpetUITests/Pods-it.cgr-riciclodelpetUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CDCDAD680CF600C8217A7172 /* Pods_it_cgr_riciclodelpet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_it_cgr_riciclodelpet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1E4579094257060D2AD375D /* Pods_it_cgr_riciclodelpetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_it_cgr_riciclodelpetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0ECAE67C9763E59171AD058 /* Pods-it.cgr-riciclodelpetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-it.cgr-riciclodelpetTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-it.cgr-riciclodelpetTests/Pods-it.cgr-riciclodelpetTests.release.xcconfig"; sourceTree = "<group>"; };
+		E88C1F168D3B59E26294624F /* Pods-it.cgr-riciclodelpetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-it.cgr-riciclodelpetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-it.cgr-riciclodelpetUITests/Pods-it.cgr-riciclodelpetUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F40F28161FFD262100935D7B /* ItemRicetta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRicetta.swift; sourceTree = "<group>"; };
+		F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProdottoFinito.swift; sourceTree = "<group>"; };
 		F489DCB81FF6945B00E61B72 /* it.cgr-riciclodelpet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "it.cgr-riciclodelpet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F489DCBD1FF6945B00E61B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +88,15 @@
 		F489DCD71FF6945B00E61B72 /* it.cgr-riciclodelpetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "it.cgr-riciclodelpetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F489DCDB1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = it_cgr_riciclodelpetUITests.swift; sourceTree = "<group>"; };
 		F489DCDD1FF6945B00E61B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbTableViewController.swift; sourceTree = "<group>"; };
+		F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RicettaTableViewController.swift; sourceTree = "<group>"; };
+		F4AC890A200A98670049D188 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F4AC8911200AAD6C0049D188 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "../../../../../Downloads/Flash-Chat-iOS11-master/Flash Chat/RegisterViewController.swift"; sourceTree = "<group>"; };
+		F4AC8913200AB14A0049D188 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = "../../../../../Downloads/Flash-Chat-iOS11-master/Flash Chat/LogInViewController.swift"; sourceTree = "<group>"; };
+		F4E800482003201A002347DE /* InsertDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertDataViewController.swift; sourceTree = "<group>"; };
+		F4F9CA37201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioProduzioneTableViewController.swift; sourceTree = "<group>"; };
+		F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioProduzione.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB8AD418F7E460578204D25 /* Pods_it_cgr_riciclodelpet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B026C9F71079C6BA7AD998 /* Pods_it_cgr_riciclodelpetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +120,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D1462B5A30944033BA531A /* Pods_it_cgr_riciclodelpetUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90200204B2A15BBFA8B5BCC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C1789106A4C7E1C72CFA1 /* Pods-it.cgr-riciclodelpet.debug.xcconfig */,
+				2AB661F2E3C894D22D033C74 /* Pods-it.cgr-riciclodelpet.release.xcconfig */,
+				584168FCDF10F84625F8689F /* Pods-it.cgr-riciclodelpetTests.debug.xcconfig */,
+				E0ECAE67C9763E59171AD058 /* Pods-it.cgr-riciclodelpetTests.release.xcconfig */,
+				E88C1F168D3B59E26294624F /* Pods-it.cgr-riciclodelpetUITests.debug.xcconfig */,
+				81FB5D38395DDC1BF0AE9D44 /* Pods-it.cgr-riciclodelpetUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD4DF2D71837875DE8639AF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDCDAD680CF600C8217A7172 /* Pods_it_cgr_riciclodelpet.framework */,
+				D1E4579094257060D2AD375D /* Pods_it_cgr_riciclodelpetTests.framework */,
+				433014764FB72D05B1947CF9 /* Pods_it_cgr_riciclodelpetUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F489DCAF1FF6945B00E61B72 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +157,8 @@
 				F489DCCF1FF6945B00E61B72 /* it.cgr-riciclodelpetTests */,
 				F489DCDA1FF6945B00E61B72 /* it.cgr-riciclodelpetUITests */,
 				F489DCB91FF6945B00E61B72 /* Products */,
+				90200204B2A15BBFA8B5BCC5 /* Pods */,
+				BD4DF2D71837875DE8639AF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +175,10 @@
 		F489DCBA1FF6945B00E61B72 /* it.cgr-riciclodelpet */ = {
 			isa = PBXGroup;
 			children = (
+				F4AC890B200A98F30049D188 /* Model */,
+				F4AC8909200A98500049D188 /* Controller */,
+				F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */,
 				F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */,
-				F489DCBD1FF6945B00E61B72 /* ViewController.swift */,
 				F489DCBF1FF6945B00E61B72 /* Main.storyboard */,
 				F489DCC21FF6945B00E61B72 /* Assets.xcassets */,
 				F489DCC41FF6945B00E61B72 /* LaunchScreen.storyboard */,
@@ -125,6 +205,31 @@
 			path = "it.cgr-riciclodelpetUITests";
 			sourceTree = "<group>";
 		};
+		F4AC8909200A98500049D188 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4AC890A200A98670049D188 /* WelcomeViewController.swift */,
+				F4AC8913200AB14A0049D188 /* LogInViewController.swift */,
+				F4AC8911200AAD6C0049D188 /* RegisterViewController.swift */,
+				F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */,
+				F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */,
+				F4E800482003201A002347DE /* InsertDataViewController.swift */,
+				F489DCBD1FF6945B00E61B72 /* ViewController.swift */,
+				F4F9CA37201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4AC890B200A98F30049D188 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F40F28161FFD262100935D7B /* ItemRicetta.swift */,
+				F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */,
+				F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F489DCE01FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpet" */;
 			buildPhases = (
+				7732CBCE08A29CD20AD7D630 /* [CP] Check Pods Manifest.lock */,
 				F489DCB41FF6945B00E61B72 /* Sources */,
 				F489DCB51FF6945B00E61B72 /* Frameworks */,
 				F489DCB61FF6945B00E61B72 /* Resources */,
+				92EE26994BFDE371E5F47CCA /* [CP] Embed Pods Frameworks */,
+				E991F2FF89C7B26DEC0F8FF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F489DCE31FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpetTests" */;
 			buildPhases = (
+				1AE8A6B9E1EEA3BEF5DFF98A /* [CP] Check Pods Manifest.lock */,
 				F489DCC81FF6945B00E61B72 /* Sources */,
 				F489DCC91FF6945B00E61B72 /* Frameworks */,
 				F489DCCA1FF6945B00E61B72 /* Resources */,
+				1DDE3E484D7142D833603E14 /* [CP] Embed Pods Frameworks */,
+				8AB5A41627F4C6B56C8946E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F489DCE61FF6945B00E61B72 /* Build configuration list for PBXNativeTarget "it.cgr-riciclodelpetUITests" */;
 			buildPhases = (
+				3CDCCB327060E51E787EB869 /* [CP] Check Pods Manifest.lock */,
 				F489DCD31FF6945B00E61B72 /* Sources */,
 				F489DCD41FF6945B00E61B72 /* Frameworks */,
 				F489DCD51FF6945B00E61B72 /* Resources */,
+				07B4053B88298A2A33C8BF77 /* [CP] Embed Pods Frameworks */,
+				AE74E58859D543E09BB52912 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F489DCC61FF6945B00E61B72 /* LaunchScreen.storyboard in Resources */,
+				F489DCEA1FF6BA4B00E61B72 /* GoogleService-Info.plist in Resources */,
 				F489DCC31FF6945B00E61B72 /* Assets.xcassets in Resources */,
 				F489DCC11FF6945B00E61B72 /* Main.storyboard in Resources */,
 			);
@@ -242,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F489DCEB1FF6BA4B00E61B72 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,17 +365,184 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F489DCEC1FF6BA4B00E61B72 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07B4053B88298A2A33C8BF77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-it.cgr-riciclodelpetUITests/Pods-it.cgr-riciclodelpetUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AE8A6B9E1EEA3BEF5DFF98A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-it.cgr-riciclodelpetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1DDE3E484D7142D833603E14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-it.cgr-riciclodelpetTests/Pods-it.cgr-riciclodelpetTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CDCCB327060E51E787EB869 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-it.cgr-riciclodelpetUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7732CBCE08A29CD20AD7D630 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-it.cgr-riciclodelpet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB5A41627F4C6B56C8946E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-it.cgr-riciclodelpetTests/Pods-it.cgr-riciclodelpetTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92EE26994BFDE371E5F47CCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-it.cgr-riciclodelpet/Pods-it.cgr-riciclodelpet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-it.cgr-riciclodelpet/Pods-it.cgr-riciclodelpet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE74E58859D543E09BB52912 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-it.cgr-riciclodelpetUITests/Pods-it.cgr-riciclodelpetUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E991F2FF89C7B26DEC0F8FF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-it.cgr-riciclodelpet/Pods-it.cgr-riciclodelpet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F489DCB41FF6945B00E61B72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F9CA3C201DEC8C000698C6 /* DettaglioProduzione.swift in Sources */,
+				F4AC8912200AAD6C0049D188 /* RegisterViewController.swift in Sources */,
+				F4F9CA38201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift in Sources */,
+				F40F281B1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */,
+				F4AC8910200A9A7C0049D188 /* WelcomeViewController.swift in Sources */,
+				F4E800492003201A002347DE /* InsertDataViewController.swift in Sources */,
+				F489DCF61FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */,
 				F489DCBE1FF6945B00E61B72 /* ViewController.swift in Sources */,
+				F489DCEE1FF6E88300E61B72 /* FbTableViewController.swift in Sources */,
+				F40F28171FFD262100935D7B /* ItemRicetta.swift in Sources */,
+				F4AC8914200AB14A0049D188 /* LogInViewController.swift in Sources */,
 				F489DCBC1FF6945B00E61B72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +551,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F9CA3E201DEC92000698C6 /* DettaglioProduzione.swift in Sources */,
 				F489DCD11FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift in Sources */,
+				F489DCEF1FF6E88300E61B72 /* FbTableViewController.swift in Sources */,
+				F489DCF71FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */,
+				F40F281C1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */,
+				F4AC890E200A99240049D188 /* ViewController.swift in Sources */,
+				F40F28181FFD262100935D7B /* ItemRicetta.swift in Sources */,
+				F4AC890C200A991E0049D188 /* InsertDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +566,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F9CA3D201DEC92000698C6 /* DettaglioProduzione.swift in Sources */,
 				F489DCDC1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift in Sources */,
+				F489DCF01FF6E88300E61B72 /* FbTableViewController.swift in Sources */,
+				F489DCF81FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */,
+				F40F281D1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */,
+				F4AC890F200A99240049D188 /* ViewController.swift in Sources */,
+				F40F28191FFD262100935D7B /* ItemRicetta.swift in Sources */,
+				F4AC890D200A991E0049D188 /* InsertDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,12 +721,13 @@
 		};
 		F489DCE11FF6945B00E61B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5C1789106A4C7E1C72CFA1 /* Pods-it.cgr-riciclodelpet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "it.cgr-riciclodelpet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpet";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.cgr-riciclodelpet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -438,12 +736,13 @@
 		};
 		F489DCE21FF6945B00E61B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AB661F2E3C894D22D033C74 /* Pods-it.cgr-riciclodelpet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "it.cgr-riciclodelpet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cgr.it-cgr-riciclodelpet";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.cgr-riciclodelpet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,6 +751,7 @@
 		};
 		F489DCE41FF6945B00E61B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 584168FCDF10F84625F8689F /* Pods-it.cgr-riciclodelpetTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,6 +768,7 @@
 		};
 		F489DCE51FF6945B00E61B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0ECAE67C9763E59171AD058 /* Pods-it.cgr-riciclodelpetTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +785,7 @@
 		};
 		F489DCE71FF6945B00E61B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E88C1F168D3B59E26294624F /* Pods-it.cgr-riciclodelpetUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +801,7 @@
 		};
 		F489DCE81FF6945B00E61B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81FB5D38395DDC1BF0AE9D44 /* Pods-it.cgr-riciclodelpetUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
