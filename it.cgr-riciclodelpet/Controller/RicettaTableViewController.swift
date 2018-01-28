@@ -13,7 +13,8 @@ class RicettaTableViewController: UITableViewController {
     
     
 
-    var Ricettalist: [ItemRicetta]?
+    var produzioneLotto: DettaglioProduzione?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +40,15 @@ class RicettaTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Ricettalist!.count
+        return produzioneLotto!.quantity.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Ricettacell", for: indexPath)
-        let todoitem = Ricettalist![indexPath.row]
-        cell.textLabel?.text = todoitem.articolo + ", " + String(todoitem.quantity) + todoitem.misura
-        cell.detailTextLabel?.text = String(todoitem.fornitore) + " " + String(todoitem.lotto)
+        
+        cell.textLabel?.text = String(describing: produzioneLotto?.quantity[indexPath.row])
+        cell.detailTextLabel?.text = String(describing: produzioneLotto?.note[indexPath.row])
         
 
         return cell

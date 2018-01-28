@@ -19,8 +19,8 @@ import FirebaseDatabase
 class FbTableViewController: UITableViewController {
 
     var toProduceList: [ItemProdottoFinito] = []
-    let toDoListRef: DatabaseReference = Database.database().reference().child("todolist")
-    var Ricettalist: [ItemRicetta] = []
+    let produzioneDettaglioRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
+    var listaProduzione: [DettaglioProduzione] = []
     
    
    
@@ -28,30 +28,31 @@ class FbTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        toDoListRef.observe(.value) { (snapShot) in
-            self.toProduceList = []
+        produzioneDettaglioRef.observe(.value) { (snapShot) in
+            self.listaProduzione = []
             for item in snapShot.children {
-                let toProduceData = item as! DataSnapshot
-                let miscela = toProduceData.childSnapshot(forPath: "Ricetta")
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                let numeroRigheRicetta = miscela.childrenCount
-                self.getRicetta(ricetta: miscela, numeroRighe: Int(numeroRigheRicetta))
-                let toProduceItem = toProduceData.value as! [String: Any]
-                let name: String = String(describing: toProduceItem["Name"]!)
-                let completed: Bool = toProduceItem["Completed"] as! Bool
-                let umisura: String = String(describing: toProduceItem["Umisura"]!)
-                let note: String = String(describing: toProduceItem["Note"]!)
-                let quantity: Int = toProduceItem["Quantity"] as! Int
-                let dataStartString: String = toProduceItem["DataStart"] as! String
-                print(dataStartString)
-                let dataStart = dateFormatter.date(from: dataStartString)
-                let dataCompletedString: String = toProduceItem["DataCompleted"] as! String
-                print(dataCompletedString)
+                let firebaseData = item as! DataSnapshot
+                //let miscela = firebaseData.childSnapshot(forPath: "Ricetta")
+                //let dateFormatter = DateFormatter()
+                //dateFormatter.dateFormat = "yyyy-MM-dd"
+                //let numeroRigheRicetta = miscela.childrenCount
+                //self.getRicetta(ricetta: miscela, numeroRighe: Int(numeroRigheRicetta))
+                let lotto = firebaseData.key
+                let lottoProduzione = firebaseData.value as! [String: Any]
+                print(lottoProduzione)
+                let codiceProdotto: String = String(describing: lottoProduzione["Articolo"]!)
+                let umisura = "Kg"
+                let noteArray: [String] = lottoProduzione["Dettaglionota"]! as! [String]
+                let quantityArray: [Int] = lottoProduzione["Dettaglioquantita"] as! [Int]
+                //let dataStartString: String = lottoProduzione["DataStart"] as! String
+                //print(dataStartString)
+                //let dataStart = dateFormatter.date(from: dataStartString)
+                //let dataCompletedString: String = lottoProduzione["DataCompleted"] as! String
+               // print(dataCompletedString)
                 //let dataCompleted = dateFormatter.date(from: dataCompletedString)
-                let toProduce = ItemProdottoFinito(umisura: umisura, completed: completed, name: name, quantity: quantity, ricetta: self.Ricettalist, note: note, dataCompleted: dataStart!, dataStart: dataStart!)
-                self.toProduceList.append(toProduce)
-                self.Ricettalist = []
+                let lottoProdotto = DettaglioProduzione(lotto: lotto, umisura: umisura, codiceProdotto: codiceProdotto, quantity: quantityArray, note: noteArray)
+                self.listaProduzione.append(lottoProdotto)
+                //self.Ricettalist = []
                 
             }
          self.tableView.reloadData()
@@ -80,26 +81,27 @@ class FbTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         print(toProduceList.count)
-        return toProduceList.count
+        return listaProduzione.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListCell", for: indexPath)
-        let todoitem = toProduceList[indexPath.row]
-        cell.textLabel?.text = todoitem.name
-        cell.detailTextLabel?.text = String(todoitem.quantity) + " " + String(todoitem.umisura)
-        cell.accessoryType = todoitem.completed ? .checkmark : .none
+        let item = listaProduzione[indexPath.row]
+        cell.textLabel?.text = item.lotto + ", " + item.codiceProdotto
+        cell.detailTextLabel?.text = String(item.quantity.count) + " colli"
+        //cell.accessoryType = item.completed ? .checkmark : .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "Ricettasegue", sender: toProduceList[indexPath.row].ricetta)
+        performSegue(withIdentifier: "Ricettasegue", sender: listaProduzione[indexPath.row])
     }
     override func prepare(for segue: UIStoryboardSegue , sender: Any? ) {
         if segue.identifier == "Ricettasegue"{
         let vc = segue.destination as! RicettaTableViewController
-        vc.Ricettalist = sender as? [ItemRicetta]
+        vc.produzioneLotto = sender as? DettaglioProduzione
+       
         }
         
     }
@@ -125,7 +127,7 @@ class FbTableViewController: UITableViewController {
             //p = toDoListRef as! DataSnapshot
             //p.child(deleteItem.name).value(forKey: "Name")
             //print(String(describing: prova))
-            self.toDoListRef.child(deleteItem.name).removeValue()
+            self.produzioneDettaglioRef.child(deleteItem.name).removeValue()
             self.toProduceList.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -135,7 +137,7 @@ class FbTableViewController: UITableViewController {
         }    
     }
    
-    func getRicetta(ricetta: DataSnapshot, numeroRighe: Int) {
+  /*  func getRicetta(ricetta: DataSnapshot, numeroRighe: Int) {
         for n in 1...numeroRighe {
             let miscela = ricetta.childSnapshot(forPath: "Item\(n)")
             let miscelaItem = miscela.value as! [String: Any]
@@ -148,8 +150,8 @@ class FbTableViewController: UITableViewController {
             let rigaRicetta = ItemRicetta(misura: misura, articolo: articolo, fornitore: fornitore, lotto: lotto, quantity: quantity, note: note)
              Ricettalist.append(rigaRicetta)
         }
-       
-    }
+ 
+    } */
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
