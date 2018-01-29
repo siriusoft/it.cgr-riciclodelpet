@@ -23,16 +23,21 @@ class SchedaTecnicaViewController: UIViewController {
     @IBOutlet weak var ingiallimentoLotto: UITextField!
     
     @IBOutlet weak var noteLotto: UITextField!
+    
+    @IBOutlet weak var collaLotto: UITextField!
+    @IBOutlet weak var altriColoriLotto: UITextField!
+    
     var produzioneLotto: DettaglioProduzione?
     let schedaTecnicaRef: DatabaseReference = Database.database().reference().child("qualita")
-    
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let lottoItem = produzioneLotto?.lotto
+        
         let articoloItem = produzioneLotto?.codiceProdotto
         articoloLotto.text = articoloItem!
+        let lottoItem = produzioneLotto?.lotto
         lotto.text =  lottoItem!
         schedaTecnicaRef.child(lottoItem!).observe(.value) { (snap) in
            
@@ -40,17 +45,38 @@ class SchedaTecnicaViewController: UIViewController {
                 print ("scheda tecnica per il lotto non trovata")
                 return
             }
-         let pvc = String(describing: schedaTecnica["PVC"]!)
-         self.pvcLotto.placeholder = pvc
-         let pe = String(describing: schedaTecnica["PE"]!)
-         self.peLotto.placeholder = pe
-         let metalli = String(describing: schedaTecnica["Metalli"]!)
-         self.metalliLotto.placeholder = metalli
-         let ingiallimento = String(describing: schedaTecnica["Ingiallimento"]!)
-         self.ingiallimentoLotto.placeholder = ingiallimento
-         let approvato = String(describing: schedaTecnica["Approvato"]!)
-         self.approvatoLotto.placeholder = approvato
-         self.noteLotto.placeholder = (schedaTecnica["Note"] as! String)
+            if let pvc = schedaTecnica["PVC"] {
+                self.pvcLotto.text = String(describing: pvc)
+            }
+        
+            if let pe = schedaTecnica["PE"] {
+                self.peLotto.text = String(describing: pe)
+            }
+        
+            if let metalli = schedaTecnica["Metalli"] {
+                self.metalliLotto.text = String(describing: metalli)
+            }
+       
+            if let altriColori = schedaTecnica["Altri Colori"] {
+            self.altriColoriLotto.text = String(describing: altriColori)
+            }
+                
+            if let ingiallimento = schedaTecnica["Ingiallimento"] {
+                self.ingiallimentoLotto.text = String(describing: ingiallimento)
+            }
+        
+            if let approvato = schedaTecnica["Approvato"] {
+                self.approvatoLotto.text = String(describing: approvato)
+            }
+        
+            if let note = schedaTecnica["Note"] {
+                self.noteLotto.text = String(describing: note)
+            }
+            
+            if let colle = schedaTecnica["Colle"] {
+                self.collaLotto.text = String(describing: colle)
+            }
+        
             
          }
         // Do any additional setup after loading the view.
@@ -71,5 +97,10 @@ class SchedaTecnicaViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func modificaDatiPremuto(_ sender: Any) {
+        
+        let schedaTecnicaAggiornata = ["PVC": pvcLotto.text, "PE": peLotto.text,"Metalli": metalliLotto.text, "Ingiallimento": ingiallimentoLotto.text, "Altri colori": altriColoriLotto.text, "Colla": collaLotto.text, "Note": noteLotto.text, "Approvato": approvatoLotto.text]
+        
+        schedaTecnicaRef.child(lotto.text!).setValue(schedaTecnicaAggiornata)
+    }
 }

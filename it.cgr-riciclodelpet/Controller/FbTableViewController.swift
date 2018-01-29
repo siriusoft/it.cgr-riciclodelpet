@@ -19,7 +19,8 @@ import FirebaseDatabase
 class FbTableViewController: UITableViewController {
 
     var toProduceList: [ItemProdottoFinito] = []
-    let produzioneDettaglioRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
+    let prodDettaglioDatabaseRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
+    let qualitaDatabaseRef: DatabaseReference = Database.database().reference().child("qualita")
     var listaProduzione: [DettaglioProduzione] = []
     
    
@@ -28,7 +29,7 @@ class FbTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        produzioneDettaglioRef.observe(.value) { (snapShot) in
+        prodDettaglioDatabaseRef.observe(.value) { (snapShot) in
             self.listaProduzione = []
             for item in snapShot.children {
                 let firebaseData = item as! DataSnapshot
@@ -80,7 +81,6 @@ class FbTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(toProduceList.count)
         return listaProduzione.count
     }
 
@@ -88,8 +88,13 @@ class FbTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListCell", for: indexPath)
         let item = listaProduzione[indexPath.row]
+        qualitaDatabaseRef.child(item.lotto).observe(.value) { (snap) in
+            guard let schedaTecnica = snap.value as? [String: Any] else { return }
+            guard let approvato = schedaTecnica["Approvato"] else {return}
+            cell.detailTextLabel?.text = String(self.calcoloQuantitaLotto(dettaglioLotto: item.quantity)) + " Kg, " + String(item.quantity.count) + " colli" + ", Approvato: " + String(describing: approvato)
+        }
         cell.textLabel?.text = item.lotto + ", " + item.codiceProdotto
-        cell.detailTextLabel?.text = String(calcoloQuantitaLotto(dettaglioLotto: item.quantity)) + " Kg, " + String(item.quantity.count) + " colli"
+        
         //cell.accessoryType = item.completed ? .checkmark : .none
         return cell
     }
@@ -136,7 +141,7 @@ class FbTableViewController: UITableViewController {
             //p = toDoListRef as! DataSnapshot
             //p.child(deleteItem.name).value(forKey: "Name")
             //print(String(describing: prova))
-            self.produzioneDettaglioRef.child(deleteItem.name).removeValue()
+            self.prodDettaglioDatabaseRef.child(deleteItem.name).removeValue()
             self.toProduceList.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)

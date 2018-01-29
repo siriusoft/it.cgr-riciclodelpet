@@ -12,6 +12,7 @@ class SchedaTecnicaItem {
     var pvc: Int
     var pe: Int
     var altriColori: Int
+    var colla: Int
     var ingiallimento: Int
     var note: String
     var metalli: Int
@@ -19,11 +20,12 @@ class SchedaTecnicaItem {
     
     // var dataCompleted: Date
     
-    init(pvc: Int, pe: Int, altriColori: Int, ingiallimento: Int,  note: String, metalli: Int, approvato: Bool) {
+    init(pvc: Int, pe: Int, altriColori: Int, colla: Int, ingiallimento: Int,  note: String, metalli: Int, approvato: Bool) {
         
         self.pvc =  pvc
         self.pe = pe
         self.altriColori = altriColori
+        self.colla = colla
         self.ingiallimento = ingiallimento
         self.note = note
         self.metalli = metalli
