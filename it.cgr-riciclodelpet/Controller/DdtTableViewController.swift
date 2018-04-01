@@ -1,23 +1,48 @@
 //
-//  DettaglioProduzioneTableViewController.swift
+//  DdtTableViewController.swift
 //  it.cgr-riciclodelpet
 //
-//  Created by Alberto Rimini on 28/01/18.
+//  Created by Alberto Rimini on 09/03/18.
 //  Copyright © 2018 Alberto Rimini. All rights reserved.
 //
 
 import UIKit
-import Firebase
-import WebKit
-import FirebaseDatabase
 
-class DettaglioProduzioneTableViewController: UITableViewController {
+class DdtTableViewController: UITableViewController {
 
-    let toDoListRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
-    
+    var ddtList: [Articolo]?
+    var articoloDictionary: [String:[Articolo]] = [:]
+    var listaChiavi: [String] = []
+    var totaleKgDdt = 0
+    var totaleColliDdt = 0
+    var totaleKgTara = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let headerView = UIView()
+        headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 40)
+        headerView.backgroundColor = .green
+        tableView.tableHeaderView = headerView
+        let totaleDdtLabel = UILabel()
+        totaleDdtLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 30)
+        totaleDdtLabel.textAlignment = .center
+       
+        headerView.addSubview(totaleDdtLabel)
+        
+        let predicate = { (element: Articolo) in
+            return element.articolo
+        }
+        articoloDictionary = Dictionary(grouping: ddtList!,by: predicate)
+        
+        for (chiave,_) in articoloDictionary {
+            listaChiavi.append(chiave)
+        }
+        
+        for item in ddtList! {
+            totaleKgDdt += item.kg
+            totaleColliDdt += item.colli
+            totaleKgTara += item.tara
+        }
+        totaleDdtLabel.text = "P.Netto:\(totaleKgDdt) Kg, Tara: \(totaleKgTara) Kg, \(totaleColliDdt) Colli"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,23 +59,47 @@ class DettaglioProduzioneTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return articoloDictionary.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+       
+        if let item = self.articoloDictionary[listaChiavi[section]] {
+        
+        return item.count
+        } else { return 0 }
     }
 
-    /*
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let chiave = self.listaChiavi[section]
+        let listaPerChiave = articoloDictionary[chiave]
+        var totaleColli = 0
+        var totaleKg = 0
+        var totaleTara = 0
+        for item in listaPerChiave! {
+            totaleKg += item.kg
+            totaleColli += item.colli
+            totaleTara += item.tara
+        }
+        let header = "\(chiave): \(totaleKg) Kg, T: \(totaleTara) Kg, \(totaleColli) Colli"
+        
+        
+        
+        return header
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let ddtList = self.articoloDictionary[listaChiavi[indexPath.section]]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ddtCell", for: indexPath)
+        let item = ddtList![indexPath.row]
+        cell.textLabel?.text = "\(item.lotto), \(item.kg) kg, \(item.colli) colli"
         // Configure the cell...
-
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

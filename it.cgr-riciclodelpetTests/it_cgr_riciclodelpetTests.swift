@@ -1,4 +1,4 @@
-//
+  //
 //  it_cgr_riciclodelpetTests.swift
 //  it.cgr-riciclodelpetTests
 //
@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import FirebaseAuth
+import FirebaseDatabase
 @testable import it_cgr_riciclodelpet
 
 class it_cgr_riciclodelpetTests: XCTestCase {

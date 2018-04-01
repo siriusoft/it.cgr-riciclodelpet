@@ -19,9 +19,10 @@ class SchedaTecnicaViewController: UIViewController {
     @IBOutlet weak var metalliLotto: UITextField!
     @IBOutlet weak var pvcLotto: UITextField!
     @IBOutlet weak var peLotto: UITextField!
-    @IBOutlet weak var approvatoLotto: UITextField!
+  
     @IBOutlet weak var ingiallimentoLotto: UITextField!
     
+    @IBOutlet weak var approvatoSwitch: UISwitch!
     @IBOutlet weak var noteLotto: UITextField!
     
     @IBOutlet weak var collaLotto: UITextField!
@@ -29,20 +30,21 @@ class SchedaTecnicaViewController: UIViewController {
     
     var produzioneLotto: DettaglioProduzione?
     let schedaTecnicaRef: DatabaseReference = Database.database().reference().child("qualita")
-   
+    var schedaTecnicaesiste: Bool = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround() 
         let articoloItem = produzioneLotto?.codiceProdotto
-        articoloLotto.text = articoloItem!
+        articoloLotto.text = "Articolo: \(articoloItem!)"
         let lottoItem = produzioneLotto?.lotto
-        lotto.text =  lottoItem!
+        lotto.text =  "Lotto: \(lottoItem!)"
         schedaTecnicaRef.child(lottoItem!).observe(.value) { (snap) in
            
             guard let schedaTecnica = snap.value as? [String: Any] else {
                 print ("scheda tecnica per il lotto non trovata")
+                self.schedaTecnicaesiste = false
                 return
             }
             if let pvc = schedaTecnica["PVC"] {
@@ -66,7 +68,13 @@ class SchedaTecnicaViewController: UIViewController {
             }
         
             if let approvato = schedaTecnica["Approvato"] {
-                self.approvatoLotto.text = String(describing: approvato)
+                if String(describing: approvato) == "Si" {
+                    self.approvatoSwitch.setOn(true, animated: false)
+                    
+                } else {
+                    self.approvatoSwitch.setOn(false, animated: false)
+                }
+                //self.approvatoLotto.text = String(describing: approvato)
             }
         
             if let note = schedaTecnica["Note"] {
@@ -98,9 +106,34 @@ class SchedaTecnicaViewController: UIViewController {
     }
     */
     @IBAction func modificaDatiPremuto(_ sender: Any) {
+       
+        if schedaTecnicaesiste {
+            print("sei sicuro di voler modificare i dati?")
+            let alert = UIAlertController(title: "Scheda Tecnica già esiste", message: "Sei sicuro di volerla modificare?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
+                    self.dismiss(animated: true, completion: nil)
+               
+                }))
+            alert.addAction(UIAlertAction(title: "Continua", style: UIAlertActionStyle.default, handler: { action in
+                
+                    self.inserisciSchedaTecnicaInFirebase()
+                    self.dismiss(animated: true, completion: nil)
+                }))
+            self.present(alert, animated: true, completion: nil)
+
+          } else { inserisciSchedaTecnicaInFirebase()}
+       
         
-        let schedaTecnicaAggiornata = ["PVC": pvcLotto.text, "PE": peLotto.text,"Metalli": metalliLotto.text, "Ingiallimento": ingiallimentoLotto.text, "Altri colori": altriColoriLotto.text, "Colla": collaLotto.text, "Note": noteLotto.text, "Approvato": approvatoLotto.text]
+    }
+    
+    func inserisciSchedaTecnicaInFirebase() {
+        let lottoItem = produzioneLotto?.lotto
+        let approvatoFirebase: String?
+        if approvatoSwitch.isOn {
+            approvatoFirebase = "Si"
+        } else { approvatoFirebase = "No" }
+        let schedaTecnicaAggiornata = ["PVC": pvcLotto.text, "PE": peLotto.text,"Metalli": metalliLotto.text, "Ingiallimento": ingiallimentoLotto.text, "Altri colori": altriColoriLotto.text, "Colla": collaLotto.text, "Note": noteLotto.text, "Approvato": approvatoFirebase]
         
-        schedaTecnicaRef.child(lotto.text!).setValue(schedaTecnicaAggiornata)
+        schedaTecnicaRef.child(lottoItem!).setValue(schedaTecnicaAggiornata)
     }
 }

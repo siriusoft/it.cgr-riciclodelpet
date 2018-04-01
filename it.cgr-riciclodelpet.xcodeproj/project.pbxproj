@@ -16,8 +16,24 @@
 		F40F281B1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */; };
 		F40F281C1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */; };
 		F40F281D1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */; };
+		F45B893A2040D51E0054EA97 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B89392040D51E0054EA97 /* ScannerViewController.swift */; };
+		F45C0FB32051F94300B070E7 /* DdtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C0FB22051F94300B070E7 /* DdtTableViewController.swift */; };
+		F4795DA92066F1310001B493 /* FilePDFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4795DA82066F1310001B493 /* FilePDFTableViewController.swift */; };
+		F47C63492056A731000A0B69 /* LogoCGR-150dpi-RGB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F47C63482056A731000A0B69 /* LogoCGR-150dpi-RGB.jpg */; };
+		F47C634D2056C21C000A0B69 /* LogoCGR-150dpi-RGB.png in Resources */ = {isa = PBXBuildFile; fileRef = F47C634C2056C21C000A0B69 /* LogoCGR-150dpi-RGB.png */; };
+		F47C6351205AF5F9000A0B69 /* InsertDataSIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C6350205AF5F9000A0B69 /* InsertDataSIViewController.swift */; };
+		F47C6353205B15F7000A0B69 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C6352205B15F7000A0B69 /* MenuTableViewController.swift */; };
+		F47C6355205B3DC8000A0B69 /* schedaDiProduzione.html in Resources */ = {isa = PBXBuildFile; fileRef = F47C6354205B3DC8000A0B69 /* schedaDiProduzione.html */; };
+		F47C6357205B3DEC000A0B69 /* single_itemSP.html in Resources */ = {isa = PBXBuildFile; fileRef = F47C6356205B3DEC000A0B69 /* single_itemSP.html */; };
+		F47C6359205B3DFE000A0B69 /* last_itemSP.html in Resources */ = {isa = PBXBuildFile; fileRef = F47C6358205B3DFE000A0B69 /* last_itemSP.html */; };
+		F47C635B205D2627000A0B69 /* SchedaDiProduzioneComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C635A205D2627000A0B69 /* SchedaDiProduzioneComposer.swift */; };
+		F47C635D205DA123000A0B69 /* SchedaDiProduzionePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C635C205DA123000A0B69 /* SchedaDiProduzionePreviewController.swift */; };
+		F47C635F2065A31F000A0B69 /* single_item_ricettaSP.html in Resources */ = {isa = PBXBuildFile; fileRef = F47C635E2065A31F000A0B69 /* single_item_ricettaSP.html */; };
+		F47C63612065A388000A0B69 /* last_item_ricettaSP.html in Resources */ = {isa = PBXBuildFile; fileRef = F47C63602065A388000A0B69 /* last_item_ricettaSP.html */; };
+		F47C63632066B498000A0B69 /* AnagraficaLavorazioniTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C63622066B498000A0B69 /* AnagraficaLavorazioniTableViewController.swift */; };
+		F47C63652066B974000A0B69 /* InsertAnagraficaLavorazioneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C63642066B974000A0B69 /* InsertAnagraficaLavorazioneViewController.swift */; };
+		F489A88A204F121300C8D981 /* InsertPackingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489A889204F121300C8D981 /* InsertPackingListViewController.swift */; };
 		F489DCBC1FF6945B00E61B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */; };
-		F489DCBE1FF6945B00E61B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBD1FF6945B00E61B72 /* ViewController.swift */; };
 		F489DCC11FF6945B00E61B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F489DCBF1FF6945B00E61B72 /* Main.storyboard */; };
 		F489DCC31FF6945B00E61B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F489DCC21FF6945B00E61B72 /* Assets.xcassets */; };
 		F489DCC61FF6945B00E61B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F489DCC41FF6945B00E61B72 /* LaunchScreen.storyboard */; };
@@ -29,18 +45,16 @@
 		F489DCEE1FF6E88300E61B72 /* FbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */; };
 		F489DCEF1FF6E88300E61B72 /* FbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */; };
 		F489DCF01FF6E88300E61B72 /* FbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */; };
-		F489DCF61FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */; };
-		F489DCF71FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */; };
-		F489DCF81FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */; };
 		F4AC890C200A991E0049D188 /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E800482003201A002347DE /* InsertDataViewController.swift */; };
 		F4AC890D200A991E0049D188 /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E800482003201A002347DE /* InsertDataViewController.swift */; };
-		F4AC890E200A99240049D188 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBD1FF6945B00E61B72 /* ViewController.swift */; };
-		F4AC890F200A99240049D188 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCBD1FF6945B00E61B72 /* ViewController.swift */; };
 		F4AC8910200A9A7C0049D188 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC890A200A98670049D188 /* WelcomeViewController.swift */; };
 		F4AC8912200AAD6C0049D188 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8911200AAD6C0049D188 /* RegisterViewController.swift */; };
 		F4AC8914200AB14A0049D188 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8913200AB14A0049D188 /* LogInViewController.swift */; };
+		F4C7D5372042C65600337E2C /* PackingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C7D5362042C65600337E2C /* PackingListViewController.swift */; };
+		F4C7D539204323F500337E2C /* AnagraficaArticoli.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C7D538204323F500337E2C /* AnagraficaArticoli.swift */; };
+		F4C7D53B204326E100337E2C /* AnagraficaArticoliTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C7D53A204326E100337E2C /* AnagraficaArticoliTableViewController.swift */; };
+		F4C7D53D20432E4700337E2C /* InsertAnagraficaArticoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C7D53C20432E4700337E2C /* InsertAnagraficaArticoloViewController.swift */; };
 		F4E800492003201A002347DE /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E800482003201A002347DE /* InsertDataViewController.swift */; };
-		F4F9CA38201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA37201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift */; };
 		F4F9CA3C201DEC8C000698C6 /* DettaglioProduzione.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */; };
 		F4F9CA3D201DEC92000698C6 /* DettaglioProduzione.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */; };
 		F4F9CA3E201DEC92000698C6 /* DettaglioProduzione.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */; };
@@ -48,6 +62,14 @@
 		F4F9CA41201E6D1E000698C6 /* SchedaTecnicaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3F201E6D19000698C6 /* SchedaTecnicaItem.swift */; };
 		F4F9CA42201E6D1E000698C6 /* SchedaTecnicaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA3F201E6D19000698C6 /* SchedaTecnicaItem.swift */; };
 		F4F9CA44201E71D4000698C6 /* SchedaTecnicaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA43201E71D4000698C6 /* SchedaTecnicaViewController.swift */; };
+		F4F9CA48202F6F02000698C6 /* InsertRicettaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA47202F6F02000698C6 /* InsertRicettaViewController.swift */; };
+		F4F9CA4A2037921D000698C6 /* EtichettaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9CA492037921D000698C6 /* EtichettaViewController.swift */; };
+		F4FF1E9B2055B5640029E437 /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = F4FF1E9A2055B5640029E437 /* last_item.html */; };
+		F4FF1E9D2055B56C0029E437 /* packingList.html in Resources */ = {isa = PBXBuildFile; fileRef = F4FF1E9C2055B56C0029E437 /* packingList.html */; };
+		F4FF1E9F2055B57B0029E437 /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = F4FF1E9E2055B57B0029E437 /* single_item.html */; };
+		F4FF1EA72055B8840029E437 /* PackingListComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF1EA62055B8840029E437 /* PackingListComposer.swift */; };
+		F4FF1EA92055B8ED0029E437 /* PackingListPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF1EA82055B8ED0029E437 /* PackingListPreviewController.swift */; };
+		F4FF1EAB2055B97A0029E437 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF1EAA2055B97A0029E437 /* CustomPrintPageRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,9 +101,25 @@
 		E88C1F168D3B59E26294624F /* Pods-it.cgr-riciclodelpetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-it.cgr-riciclodelpetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-it.cgr-riciclodelpetUITests/Pods-it.cgr-riciclodelpetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F40F28161FFD262100935D7B /* ItemRicetta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRicetta.swift; sourceTree = "<group>"; };
 		F40F281A1FFD267C00935D7B /* ItemProdottoFinito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProdottoFinito.swift; sourceTree = "<group>"; };
+		F45B89392040D51E0054EA97 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		F45C0FB22051F94300B070E7 /* DdtTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdtTableViewController.swift; sourceTree = "<group>"; };
+		F4795DA82066F1310001B493 /* FilePDFTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePDFTableViewController.swift; sourceTree = "<group>"; };
+		F47C63482056A731000A0B69 /* LogoCGR-150dpi-RGB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "LogoCGR-150dpi-RGB.jpg"; sourceTree = "<group>"; };
+		F47C634C2056C21C000A0B69 /* LogoCGR-150dpi-RGB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogoCGR-150dpi-RGB.png"; sourceTree = "<group>"; };
+		F47C6350205AF5F9000A0B69 /* InsertDataSIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertDataSIViewController.swift; sourceTree = "<group>"; };
+		F47C6352205B15F7000A0B69 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		F47C6354205B3DC8000A0B69 /* schedaDiProduzione.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = schedaDiProduzione.html; sourceTree = "<group>"; };
+		F47C6356205B3DEC000A0B69 /* single_itemSP.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = single_itemSP.html; sourceTree = "<group>"; };
+		F47C6358205B3DFE000A0B69 /* last_itemSP.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = last_itemSP.html; sourceTree = "<group>"; };
+		F47C635A205D2627000A0B69 /* SchedaDiProduzioneComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedaDiProduzioneComposer.swift; sourceTree = "<group>"; };
+		F47C635C205DA123000A0B69 /* SchedaDiProduzionePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedaDiProduzionePreviewController.swift; sourceTree = "<group>"; };
+		F47C635E2065A31F000A0B69 /* single_item_ricettaSP.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = single_item_ricettaSP.html; sourceTree = "<group>"; };
+		F47C63602065A388000A0B69 /* last_item_ricettaSP.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = last_item_ricettaSP.html; sourceTree = "<group>"; };
+		F47C63622066B498000A0B69 /* AnagraficaLavorazioniTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagraficaLavorazioniTableViewController.swift; sourceTree = "<group>"; };
+		F47C63642066B974000A0B69 /* InsertAnagraficaLavorazioneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAnagraficaLavorazioneViewController.swift; sourceTree = "<group>"; };
+		F489A889204F121300C8D981 /* InsertPackingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPackingListViewController.swift; sourceTree = "<group>"; };
 		F489DCB81FF6945B00E61B72 /* it.cgr-riciclodelpet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "it.cgr-riciclodelpet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F489DCBB1FF6945B00E61B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F489DCBD1FF6945B00E61B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F489DCC01FF6945B00E61B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F489DCC21FF6945B00E61B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F489DCC51FF6945B00E61B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,15 +132,25 @@
 		F489DCDD1FF6945B00E61B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbTableViewController.swift; sourceTree = "<group>"; };
-		F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RicettaTableViewController.swift; sourceTree = "<group>"; };
 		F4AC890A200A98670049D188 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F4AC8911200AAD6C0049D188 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "../../../../../Downloads/Flash-Chat-iOS11-master/Flash Chat/RegisterViewController.swift"; sourceTree = "<group>"; };
 		F4AC8913200AB14A0049D188 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = "../../../../../Downloads/Flash-Chat-iOS11-master/Flash Chat/LogInViewController.swift"; sourceTree = "<group>"; };
+		F4C7D5362042C65600337E2C /* PackingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListViewController.swift; sourceTree = "<group>"; };
+		F4C7D538204323F500337E2C /* AnagraficaArticoli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagraficaArticoli.swift; sourceTree = "<group>"; };
+		F4C7D53A204326E100337E2C /* AnagraficaArticoliTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagraficaArticoliTableViewController.swift; sourceTree = "<group>"; };
+		F4C7D53C20432E4700337E2C /* InsertAnagraficaArticoloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAnagraficaArticoloViewController.swift; sourceTree = "<group>"; };
 		F4E800482003201A002347DE /* InsertDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertDataViewController.swift; sourceTree = "<group>"; };
-		F4F9CA37201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioProduzioneTableViewController.swift; sourceTree = "<group>"; };
 		F4F9CA3B201DEC8C000698C6 /* DettaglioProduzione.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioProduzione.swift; sourceTree = "<group>"; };
 		F4F9CA3F201E6D19000698C6 /* SchedaTecnicaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SchedaTecnicaItem.swift; path = "it.cgr-riciclodelpet/Model/SchedaTecnicaItem.swift"; sourceTree = SOURCE_ROOT; };
 		F4F9CA43201E71D4000698C6 /* SchedaTecnicaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedaTecnicaViewController.swift; sourceTree = "<group>"; };
+		F4F9CA47202F6F02000698C6 /* InsertRicettaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertRicettaViewController.swift; sourceTree = "<group>"; };
+		F4F9CA492037921D000698C6 /* EtichettaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtichettaViewController.swift; sourceTree = "<group>"; };
+		F4FF1E9A2055B5640029E437 /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = last_item.html; sourceTree = "<group>"; };
+		F4FF1E9C2055B56C0029E437 /* packingList.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = packingList.html; path = "it.cgr-riciclodelpet/ HTML Templates/packingList.html"; sourceTree = SOURCE_ROOT; };
+		F4FF1E9E2055B57B0029E437 /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = single_item.html; sourceTree = "<group>"; };
+		F4FF1EA62055B8840029E437 /* PackingListComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListComposer.swift; sourceTree = "<group>"; };
+		F4FF1EA82055B8ED0029E437 /* PackingListPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListPreviewController.swift; sourceTree = "<group>"; };
+		F4FF1EAA2055B97A0029E437 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +229,7 @@
 		F489DCBA1FF6945B00E61B72 /* it.cgr-riciclodelpet */ = {
 			isa = PBXGroup;
 			children = (
+				F4FF1E8D2055AAFE0029E437 /*  HTML Templates */,
 				F4AC890B200A98F30049D188 /* Model */,
 				F4AC8909200A98500049D188 /* Controller */,
 				F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */,
@@ -217,12 +266,27 @@
 				F4AC890A200A98670049D188 /* WelcomeViewController.swift */,
 				F4AC8913200AB14A0049D188 /* LogInViewController.swift */,
 				F4AC8911200AAD6C0049D188 /* RegisterViewController.swift */,
+				F47C6352205B15F7000A0B69 /* MenuTableViewController.swift */,
 				F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */,
-				F489DCF51FF8274C00E61B72 /* RicettaTableViewController.swift */,
+				F4C7D53A204326E100337E2C /* AnagraficaArticoliTableViewController.swift */,
+				F47C63622066B498000A0B69 /* AnagraficaLavorazioniTableViewController.swift */,
+				F4C7D5362042C65600337E2C /* PackingListViewController.swift */,
+				F45C0FB22051F94300B070E7 /* DdtTableViewController.swift */,
+				F4F9CA47202F6F02000698C6 /* InsertRicettaViewController.swift */,
+				F4C7D53C20432E4700337E2C /* InsertAnagraficaArticoloViewController.swift */,
+				F47C63642066B974000A0B69 /* InsertAnagraficaLavorazioneViewController.swift */,
 				F4E800482003201A002347DE /* InsertDataViewController.swift */,
-				F489DCBD1FF6945B00E61B72 /* ViewController.swift */,
+				F47C6350205AF5F9000A0B69 /* InsertDataSIViewController.swift */,
+				F489A889204F121300C8D981 /* InsertPackingListViewController.swift */,
 				F4F9CA43201E71D4000698C6 /* SchedaTecnicaViewController.swift */,
-				F4F9CA37201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift */,
+				F4F9CA492037921D000698C6 /* EtichettaViewController.swift */,
+				F45B89392040D51E0054EA97 /* ScannerViewController.swift */,
+				F4FF1EAA2055B97A0029E437 /* CustomPrintPageRenderer.swift */,
+				F4FF1EA62055B8840029E437 /* PackingListComposer.swift */,
+				F47C635A205D2627000A0B69 /* SchedaDiProduzioneComposer.swift */,
+				F4FF1EA82055B8ED0029E437 /* PackingListPreviewController.swift */,
+				F47C635C205DA123000A0B69 /* SchedaDiProduzionePreviewController.swift */,
+				F4795DA82066F1310001B493 /* FilePDFTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +300,24 @@
 				F4F9CA3F201E6D19000698C6 /* SchedaTecnicaItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F4FF1E8D2055AAFE0029E437 /*  HTML Templates */ = {
+			isa = PBXGroup;
+			children = (
+				F4FF1E9A2055B5640029E437 /* last_item.html */,
+				F4FF1E9C2055B56C0029E437 /* packingList.html */,
+				F47C6354205B3DC8000A0B69 /* schedaDiProduzione.html */,
+				F47C6356205B3DEC000A0B69 /* single_itemSP.html */,
+				F47C635E2065A31F000A0B69 /* single_item_ricettaSP.html */,
+				F47C63602065A388000A0B69 /* last_item_ricettaSP.html */,
+				F47C6358205B3DFE000A0B69 /* last_itemSP.html */,
+				F4FF1E9E2055B57B0029E437 /* single_item.html */,
+				F47C63482056A731000A0B69 /* LogoCGR-150dpi-RGB.jpg */,
+				F47C634C2056C21C000A0B69 /* LogoCGR-150dpi-RGB.png */,
+				F4C7D538204323F500337E2C /* AnagraficaArticoli.swift */,
+			);
+			path = " HTML Templates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,9 +436,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47C6359205B3DFE000A0B69 /* last_itemSP.html in Resources */,
+				F47C6355205B3DC8000A0B69 /* schedaDiProduzione.html in Resources */,
+				F4FF1E9F2055B57B0029E437 /* single_item.html in Resources */,
+				F47C635F2065A31F000A0B69 /* single_item_ricettaSP.html in Resources */,
 				F489DCC61FF6945B00E61B72 /* LaunchScreen.storyboard in Resources */,
+				F47C63492056A731000A0B69 /* LogoCGR-150dpi-RGB.jpg in Resources */,
+				F47C6357205B3DEC000A0B69 /* single_itemSP.html in Resources */,
+				F47C63612065A388000A0B69 /* last_item_ricettaSP.html in Resources */,
+				F4FF1E9B2055B5640029E437 /* last_item.html in Resources */,
 				F489DCEA1FF6BA4B00E61B72 /* GoogleService-Info.plist in Resources */,
+				F47C634D2056C21C000A0B69 /* LogoCGR-150dpi-RGB.png in Resources */,
 				F489DCC31FF6945B00E61B72 /* Assets.xcassets in Resources */,
+				F4FF1E9D2055B56C0029E437 /* packingList.html in Resources */,
 				F489DCC11FF6945B00E61B72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,17 +634,33 @@
 			files = (
 				F4F9CA3C201DEC8C000698C6 /* DettaglioProduzione.swift in Sources */,
 				F4AC8912200AAD6C0049D188 /* RegisterViewController.swift in Sources */,
-				F4F9CA38201DE8C5000698C6 /* DettaglioProduzioneTableViewController.swift in Sources */,
+				F47C635B205D2627000A0B69 /* SchedaDiProduzioneComposer.swift in Sources */,
+				F45C0FB32051F94300B070E7 /* DdtTableViewController.swift in Sources */,
+				F4C7D5372042C65600337E2C /* PackingListViewController.swift in Sources */,
 				F40F281B1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */,
 				F4AC8910200A9A7C0049D188 /* WelcomeViewController.swift in Sources */,
+				F4C7D53D20432E4700337E2C /* InsertAnagraficaArticoloViewController.swift in Sources */,
+				F4FF1EAB2055B97A0029E437 /* CustomPrintPageRenderer.swift in Sources */,
+				F4C7D539204323F500337E2C /* AnagraficaArticoli.swift in Sources */,
+				F489A88A204F121300C8D981 /* InsertPackingListViewController.swift in Sources */,
+				F47C6351205AF5F9000A0B69 /* InsertDataSIViewController.swift in Sources */,
 				F4E800492003201A002347DE /* InsertDataViewController.swift in Sources */,
-				F489DCF61FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */,
-				F489DCBE1FF6945B00E61B72 /* ViewController.swift in Sources */,
+				F47C63652066B974000A0B69 /* InsertAnagraficaLavorazioneViewController.swift in Sources */,
+				F4F9CA4A2037921D000698C6 /* EtichettaViewController.swift in Sources */,
+				F4F9CA48202F6F02000698C6 /* InsertRicettaViewController.swift in Sources */,
 				F4F9CA40201E6D19000698C6 /* SchedaTecnicaItem.swift in Sources */,
 				F489DCEE1FF6E88300E61B72 /* FbTableViewController.swift in Sources */,
+				F4795DA92066F1310001B493 /* FilePDFTableViewController.swift in Sources */,
+				F4C7D53B204326E100337E2C /* AnagraficaArticoliTableViewController.swift in Sources */,
+				F47C6353205B15F7000A0B69 /* MenuTableViewController.swift in Sources */,
 				F40F28171FFD262100935D7B /* ItemRicetta.swift in Sources */,
 				F4AC8914200AB14A0049D188 /* LogInViewController.swift in Sources */,
 				F4F9CA44201E71D4000698C6 /* SchedaTecnicaViewController.swift in Sources */,
+				F4FF1EA92055B8ED0029E437 /* PackingListPreviewController.swift in Sources */,
+				F47C63632066B498000A0B69 /* AnagraficaLavorazioniTableViewController.swift in Sources */,
+				F4FF1EA72055B8840029E437 /* PackingListComposer.swift in Sources */,
+				F45B893A2040D51E0054EA97 /* ScannerViewController.swift in Sources */,
+				F47C635D205DA123000A0B69 /* SchedaDiProduzionePreviewController.swift in Sources */,
 				F489DCBC1FF6945B00E61B72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,9 +673,7 @@
 				F489DCD11FF6945B00E61B72 /* it_cgr_riciclodelpetTests.swift in Sources */,
 				F4F9CA42201E6D1E000698C6 /* SchedaTecnicaItem.swift in Sources */,
 				F489DCEF1FF6E88300E61B72 /* FbTableViewController.swift in Sources */,
-				F489DCF71FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */,
 				F40F281C1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */,
-				F4AC890E200A99240049D188 /* ViewController.swift in Sources */,
 				F40F28181FFD262100935D7B /* ItemRicetta.swift in Sources */,
 				F4AC890C200A991E0049D188 /* InsertDataViewController.swift in Sources */,
 			);
@@ -581,9 +687,7 @@
 				F489DCDC1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift in Sources */,
 				F4F9CA41201E6D1E000698C6 /* SchedaTecnicaItem.swift in Sources */,
 				F489DCF01FF6E88300E61B72 /* FbTableViewController.swift in Sources */,
-				F489DCF81FF8274C00E61B72 /* RicettaTableViewController.swift in Sources */,
 				F40F281D1FFD267C00935D7B /* ItemProdottoFinito.swift in Sources */,
-				F4AC890F200A99240049D188 /* ViewController.swift in Sources */,
 				F40F28191FFD262100935D7B /* ItemRicetta.swift in Sources */,
 				F4AC890D200A991E0049D188 /* InsertDataViewController.swift in Sources */,
 			);
@@ -656,6 +760,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -713,6 +818,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -737,6 +843,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VPG69829U5;
 				INFOPLIST_FILE = "it.cgr-riciclodelpet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.cgr-riciclodelpet";
@@ -752,6 +859,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VPG69829U5;
 				INFOPLIST_FILE = "it.cgr-riciclodelpet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.cgr-riciclodelpet";

@@ -1,17 +1,17 @@
 //
-//  InsertDataViewController.swift
+//  InsertDataSIViewController.swift
 //  it.cgr-riciclodelpet
 //
-//  Created by Alberto Rimini on 08/01/18.
+//  Created by Alberto Rimini on 15/03/18.
 //  Copyright © 2018 Alberto Rimini. All rights reserved.
 //
 
 import UIKit
 import Firebase
-class InsertDataViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
-
+class InsertDataSIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var dataLabel: UITextField!
-
+    
     
     
     @IBOutlet weak var lavorazioneLabel: UITextField!
@@ -24,32 +24,26 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var quantityLabel: UITextField!
     
     var produzioneLotto: DettaglioProduzione?
-
+    
     var somma: Int = 0
     var articoloPickerList: [String] = [String]()
     
     let anagraficaArticoliDatabaseRef: DatabaseReference = Database.database().reference().child("anagraficaArticoli")
-    let anagraficaLavorazioniDatabaseRef: DatabaseReference = Database.database().reference().child("anagraficaLavorazioni")
+    
     var listaArticoliCodice = [String]()
-    var listaLavorazioniCodice = [String]()
     var listaArticoliDescrizioneSintetica = [String]()
-    var codificaLotto: String?
     
     
     
     
     
-        
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // articoloPickerList = ["PETSA1TPC01","PETSN1TPC01","PETSF1TPC01"]
-        
-        
-         // CARICO DA FIREBASE GLI ARTICOLI PER PICKER VIEW
-        
         anagraficaArticoliDatabaseRef.observe(.value) { (snapShot) in
             self.listaArticoliCodice = []
             self.listaArticoliDescrizioneSintetica = []
@@ -75,28 +69,12 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
         }
-        // CARICO DA FIREBASE LE LAVORAZIONI PER PICKER VIEW
-        anagraficaLavorazioniDatabaseRef.observe(.value) { (snapShot) in
-            self.listaLavorazioniCodice = []
-        
-            for item in snapShot.children {
-                
-                let firebaseData = item as! DataSnapshot
-                let codiceLavorazione = firebaseData.key
-                self.listaLavorazioniCodice.append(codiceLavorazione)
-                
-            }
-        }
         
         
-        let lavorazionePicker = UIPickerView()
-        lavorazionePicker.delegate = self
-        lavorazionePicker.tag = 1
-        lavorazioneLabel.inputView = lavorazionePicker
         
         
         let articoloPicker = UIPickerView()
-        articoloPicker.tag = 0
+        
         articoloPicker.delegate = self
         articoloLabel.inputView = articoloPicker
         
@@ -105,7 +83,7 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
         if let articolo =  produzioneLotto?.codiceProdotto { articoloLabel.text = articolo }
         if let lavorazione = produzioneLotto?.lavorazione { lavorazioneLabel.text = lavorazione}
         if let lotto = (produzioneLotto?.lotto) {
-            if let lowerBound = lotto.range(of: codificaLotto!)?.upperBound,
+            if let lowerBound = lotto.range(of: "L")?.upperBound,
                 let upperBound = lotto.range(of: "M")?.lowerBound, let miscelaBound = lotto.range(of: "M")?.upperBound {
                 lottoLabel.text = String(lotto[lowerBound..<upperBound])
                 miscelaLabel.text = String(lotto[miscelaBound])
@@ -115,7 +93,7 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
         lavorazioneLabel.text = produzioneLotto?.lavorazione
         
     }
-   
+    
     // MARK: UIPickerView Delegation
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -123,33 +101,15 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView.tag == 0 {
-            return listaArticoliDescrizioneSintetica.count
-        }
-        else {
-           return listaLavorazioniCodice.count
-        }
-        
+        return listaArticoliDescrizioneSintetica.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if pickerView.tag == 0 {
-            return listaArticoliDescrizioneSintetica[row]
-        }
-        else {
-            return listaLavorazioniCodice[row]
-        }
+        return listaArticoliDescrizioneSintetica[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if pickerView.tag == 0 {
-            articoloLabel.text = listaArticoliCodice[row]
-        }
-        else {
-            lavorazioneLabel.text = listaLavorazioniCodice[row]
-        }
+        articoloLabel.text = listaArticoliCodice[row]
     }
     
     
@@ -170,7 +130,7 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
         if let numeroRighe = produzioneLotto?.quantity.count {
             return numeroRighe } else {return 0}
     }
-  
+    
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let stampa = stampaEtichetta(at: indexPath)
         return UISwipeActionsConfiguration(actions: [stampa])
@@ -216,16 +176,16 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
      */
     
     
-     // Override to support conditional rearranging of the table view.
+    // Override to support conditional rearranging of the table view.
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
     
     
     
     
-   func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         
         let quantityToMove = produzioneLotto!.quantity[fromIndexPath.row]
         produzioneLotto?.quantity.remove(at: fromIndexPath.row)
@@ -242,9 +202,9 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
         let tempoToMove = produzioneLotto?.dataLavorazione[fromIndexPath.row]
         produzioneLotto?.dataLavorazione.remove(at: fromIndexPath.row)
         produzioneLotto?.dataLavorazione.insert(tempoToMove, at: to.row)
-    
+        
         tableView.reloadData()
-    
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -256,33 +216,33 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
             print("inserisco la quantità")
             produzioneLotto!.quantity.append(quantitaInt)
             somma = somma + quantitaInt
-        
-        if let taraInt = Int((taraLabel?.text)!) {
-            produzioneLotto!.tara.append(taraInt) } else {produzioneLotto!.tara.append(0)}
             
-        if let nota = noteLabel.text {
-            produzioneLotto!.note.append(nota) } else {  produzioneLotto?.note.append("") }
-        if let tempo = dataLabel.text {
-           produzioneLotto!.dataLavorazione.append(tempo)
-        } else { produzioneLotto!.dataLavorazione.append("") }
+            if let taraInt = Int((taraLabel?.text)!) {
+                produzioneLotto!.tara.append(taraInt) } else {produzioneLotto!.tara.append(0)}
+            
+            if let nota = noteLabel.text {
+                produzioneLotto!.note.append(nota) } else {  produzioneLotto?.note.append("") }
+            if let tempo = dataLabel.text {
+                produzioneLotto!.dataLavorazione.append(tempo)
+            } else { produzioneLotto!.dataLavorazione.append("") }
         } else { print("Non è possibile aggiungere un item senza indicare la quantità")}
         print(produzioneLotto!.quantity)
         self.tableView.reloadData()
         
     }
     
-  
+    
     
     @IBAction func dataEditing(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
-       
+        
         datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
         datePickerView.locale =  NSLocale(localeIdentifier: "it_IT") as Locale
         sender.inputView = datePickerView
         datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yy HH:mm"
-       
+        
         dataLabel.text = dateFormatter.string(from: datePickerView.date)
     }
     
@@ -300,63 +260,60 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func inserisciDati(_ sender: Any) {
-       
-        if produzioneLotto!.quantity.count > 0 {
-            let produzioneDettaglioRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
-            let quantitaRef: DatabaseReference = Database.database().reference().child("quantita")
-            let articolo = articoloLabel.text!
-            let userID = Auth.auth().currentUser!.email
-           
-            if let lotto = lottoLabel.text {
-                if let miscela = miscelaLabel.text {
-                let firebaseLotto = "\(codificaLotto!)\(lotto)M\(miscela)"
-                    produzioneDettaglioRef.child(firebaseLotto).setValue(["Articolo": articolo, "Dettaglioquantita": produzioneLotto!.quantity, "Dettaglionota": produzioneLotto!.note, "Dettagliotempo": produzioneLotto!.dataLavorazione, "Dettagliotara": produzioneLotto!.tara, "Lavorazione": lavorazioneLabel.text!])
-                let ncolli = produzioneLotto!.quantity.count
-                
-                    somma = produzioneLotto!.calcoloQuantitaLotto(dettaglioLotto: produzioneLotto!.quantity)
-                    quantitaRef.child(firebaseLotto).setValue(["ncolli": ncolli,"quantita": somma, "operatore": userID ?? "Ignoto", "lavorazione": lavorazioneLabel.text! ])
-                }
-            }
-        } else { print("Impossibile aggiungere una scheda vuota") }
-    }
-    
-    // MARK: - Navigation
-
-     @IBAction func ricettaAdd(_ sender: Any) {
+        let produzioneDettaglioRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
+        let quantitaRef: DatabaseReference = Database.database().reference().child("quantita")
+        let articolo = articoloLabel.text!
+        let userID = Auth.auth().currentUser!.email
         
         if let lotto = lottoLabel.text {
             if let miscela = miscelaLabel.text {
-                let firebaseLotto = "\(codificaLotto!)\(lotto)M\(miscela)"
-              
-                        print("pronto a caricare ricettaviewcontroller")
-                        self.performSegue(withIdentifier: "ricettaSegue", sender: firebaseLotto)
-                        
-                    }
+                let firebaseLotto = "L\(lotto)M\(miscela)"
+                produzioneDettaglioRef.child(firebaseLotto).setValue(["Articolo": articolo, "Dettaglioquantita": produzioneLotto!.quantity, "Dettaglionota": produzioneLotto!.note, "Dettagliotempo": produzioneLotto!.dataLavorazione, "Dettagliotara": produzioneLotto!.tara, "Lavorazione": lavorazioneLabel.text!])
+                let ncolli = produzioneLotto!.quantity.count
+                
+                somma = produzioneLotto!.calcoloQuantitaLotto(dettaglioLotto: produzioneLotto!.quantity)
+                quantitaRef.child(firebaseLotto).setValue(["ncolli": ncolli,"quantita": somma, "operatore": userID ?? "Ignoto", "lavorazione": lavorazioneLabel.text! ])
+            }
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    @IBAction func ricettaAdd(_ sender: Any) {
+        
+        if let lotto = lottoLabel.text {
+            if let miscela = miscelaLabel.text {
+                let firebaseLotto = "L\(lotto)M\(miscela)"
+                
+                print("pronto a caricare ricettaviewcontroller")
+                self.performSegue(withIdentifier: "ricettaSegue", sender: firebaseLotto)
+                
+            }
             
         }
     }
     
     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     
     
-       override func prepare(for segue: UIStoryboardSegue , sender: Any? ) {
-                if segue.identifier == "ricettaSegue" {
-                    print(" ed il segue è ok")
-                    let vc = segue.destination as! InsertRicettaViewController
-                    vc.firebaseLotto = sender as? String
-                }
-                if segue.identifier == "stampaEtichettaSegue" {
-                    
-                    let vc = segue.destination as! EtichettaViewController
-                    vc.codiceBarraTesto = sender as? String
+    override func prepare(for segue: UIStoryboardSegue , sender: Any? ) {
+        if segue.identifier == "ricettaSegue" {
+            print(" ed il segue è ok")
+            let vc = segue.destination as! InsertRicettaViewController
+            vc.firebaseLotto = sender as? String
+        }
+        if segue.identifier == "stampaEtichettaSegue" {
+            
+            let vc = segue.destination as! EtichettaViewController
+            vc.codiceBarraTesto = sender as? String
         }
         
-        }
+    }
     
-   
     
-   
+    
+    
     
     func stampaEtichetta(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "stampa") { (action, view, completion) in
@@ -364,10 +321,11 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
             self.performSegue(withIdentifier: "stampaEtichettaSegue", sender: codiceBarraTesto)
             print(codiceBarraTesto)
             completion(true)
-        
+            
             
         }
         return action
     }
-
+    
 }
+

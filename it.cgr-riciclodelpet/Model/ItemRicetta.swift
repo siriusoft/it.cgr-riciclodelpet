@@ -10,18 +10,22 @@
 import UIKit
 
 class ItemRicetta {
-    var misura: String
-    var articolo: String
-    var fornitore: String
-    var lotto: String
-    var quantity: Int
-    var note: String
-    init(misura: String, articolo: String,fornitore: String,lotto: String, quantity: Int, note: String) {
+    var lottoPf: String
+    var quantityColli: [Int?]
+    var articolo: [String]
+    var fornitore: [String]
+    var lotto: [String]
+    var quantityKg: [Int?]
+    var note: [String]
+    var completed: [String]
+    init(lottoPf: String, articolo: [String],fornitore: [String],lotto: [String], quantityKg: [Int?], quantityColli: [Int?],  note: [String], completed: [String]) {
+        self.lottoPf = lottoPf
         self.fornitore = fornitore
         self.articolo = articolo
-        self.quantity = quantity
-        self.misura = misura
+        self.quantityKg = quantityKg
+        self.quantityColli = quantityColli
         self.lotto = lotto
         self.note = note
+        self.completed = completed
     }
 }
