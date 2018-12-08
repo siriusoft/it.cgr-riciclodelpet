@@ -65,7 +65,7 @@ class SchedaDiProduzioneComposer: NSObject {
                         
                         // LOTTO date.
                         if let lottoData = item.dataLavorazione.first {
-                            HTMLContent = HTMLContent.replacingOccurrences(of: "#LOTTO_DATA#", with: String(describing: lottoData!))
+                            HTMLContent = HTMLContent.replacingOccurrences(of: "#LOTTO_DATA#", with: String(describing: lottoData))
                         }
                         
                         // LAVORAZIONE info.
@@ -109,8 +109,8 @@ class SchedaDiProduzioneComposer: NSObject {
                             itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#N_BB#", with: String(i + 1))
                             itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#PESO_NETTO#", with: String(item.quantity[i]))
                             itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#TARA#", with: String(item.tara[i]))
-                            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#DATA_PRODUZIONE#", with: item.dataLavorazione[i]!)
-                            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#NOTE#", with: item.note[i]!)
+                            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#DATA_PRODUZIONE#", with: item.dataLavorazione[i])
+                            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#NOTE#", with: item.note[i])
                             
                             // Add the item's HTML code to the general items string.
                             allItems += itemHTMLContent
@@ -205,6 +205,7 @@ class SchedaDiProduzioneComposer: NSObject {
         for lotto in listaLotto {
             //print("popolaRicetta: var lotto.lotto: \(lotto.lotto)")
                 let ricettaDatabase: DatabaseReference = Database.database().reference().child("ricetta").child(lotto.lotto)
+            
             ricettaDatabase.observe(.value, with: { (snapShot) in
                 
             

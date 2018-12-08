@@ -21,6 +21,7 @@ class InsertRicettaViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var fornitoreLabel: UITextField!
     @IBOutlet weak var lottoLabel: UITextField!
    
+    @IBOutlet weak var ricettaLottoLabel: UITextField!
     @IBOutlet weak var quantityLabel: UITextField!
     @IBOutlet weak var colliLabel: UITextField!
     @IBOutlet weak var noteLabel: UITextField!
@@ -202,6 +203,8 @@ class InsertRicettaViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func inserisciCollo(_ sender: Any) {
+       
+        // If non funziona
         if let articolo = articoloLabel.text {
             ricettaLotto!.articolo.append(articolo)
            // somma = somma + quantitaInt
@@ -209,7 +212,7 @@ class InsertRicettaViewController: UIViewController, UITableViewDelegate, UITabl
             if let fornitore = fornitoreLabel.text {
                 ricettaLotto!.fornitore.append(fornitore) } else { ricettaLotto!.fornitore.append("") }
             
-            if let lotto = lottoLabel.text {
+            if let lotto = ricettaLottoLabel.text {
                 ricettaLotto!.lotto.append(lotto) } else { ricettaLotto!.note.append("") }
             
             if let colliInt = Int((colliLabel?.text)!) {

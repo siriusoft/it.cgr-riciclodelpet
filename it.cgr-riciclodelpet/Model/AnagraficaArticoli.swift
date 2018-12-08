@@ -27,15 +27,17 @@ class AnagraficaArticoli {
     }
 }
 
-class AnagraficaLavorazioni {
+class AnagraficaLavorazione {
     var codiceLavorazione: String
     var descrizioneLavorazione: String
     var autore: String
+    var repartoChar: String
     
-    init(codiceLavorazione: String, descrizioneLavorazione: String, autore: String) {
+    init(codiceLavorazione: String, descrizioneLavorazione: String, autore: String, repartoChar: String) {
         self.codiceLavorazione = codiceLavorazione
         self.descrizioneLavorazione = descrizioneLavorazione
         self.autore = autore
+        self.repartoChar = repartoChar
     }
 }
 

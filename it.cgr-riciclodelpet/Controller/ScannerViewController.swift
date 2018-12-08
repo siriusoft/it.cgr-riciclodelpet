@@ -25,6 +25,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     var barCodeString: String?
     
+    @IBOutlet weak var torchiaSwitch: UISwitch!
     @IBOutlet weak var scannedLabelText: UILabel!
     let codeFrame:UIView = {
         let codeFrame = UIView()
@@ -45,7 +46,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
        /* let leftSwipe = UISwipeGestureRecognizer(target: self, action:  #selector(swipeAction(swipe:)))
         leftSwipe.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(leftSwipe) */
-        
+        torchiaSwitch.addTarget(self, action: #selector(self.stateChanged), for: UIControlEvents.valueChanged)
         
         navigationItem.title = "Scanner"
         view.backgroundColor = .white
@@ -161,7 +162,8 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     @IBAction func addItemToPackingList(_ sender: Any) {
        
-        //aggiungere controllo che l'item non sia già stato inserito nell'array packingList
+        
+        // controllo che l'item non sia già stato inserito nell'array packingList
         
         if let barCode = barCodeString {
             let myBarCode = CodiceBarra(barCode: barCode)
@@ -175,6 +177,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 } else {
                 packingListCompleto!.listaColli?.append(itemToPackingList)
                 
+                    UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseIn, animations: {
+                        self.scannedLabelText.backgroundColor = UIColor.green
+                        
+                    }) { (true) in
+                        print("ciao")
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        // do stuff 1 second later
+                        self.scannedLabelText.backgroundColor = UIColor.white
+                    }
                 delegate?.AddItemtoPackingList(dettaglioPackingList: packingListCompleto!)
                 self.dismiss(animated: true, completion: nil)
                 
@@ -210,5 +222,55 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         }
         return false
     }
+    
+    
+  /*  @IBAction func useTorch(_ sender: UISwitch) {
+        
+        if torchiaSwitch.isOn {
+            toggleTorch(on: false)
+            torchiaSwitch.setOn(false, animated: true)
+        } else {
+            toggleTorch(on: true)
+            torchiaSwitch.setOn(true, animated: true)
+        }
+    } */
+    
+    
+    
+    
+   @objc func stateChanged(switchState: UISwitch) {
+        if switchState.isOn {
+            toggleTorch(on: true)
+            //torchiaSwitch.setOn(false, animated: true)
+        } else {
+            toggleTorch(on: false)
+            //torchiaSwitch.setOn(true, animated: true)
+        }
+        
+    }
+   
+    
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+        
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+                
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+                
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch could not be used")
+            }
+        } else {
+            print("Torch is not available")
+        }
+    }
+
     
 }

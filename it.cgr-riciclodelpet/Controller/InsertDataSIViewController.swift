@@ -120,8 +120,8 @@ class InsertDataSIViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProduzioneCell", for: indexPath as IndexPath)
-        cell.textLabel?.text = "BB n. \(indexPath.row + 1) - N: " +   String(describing: produzioneLotto!.quantity[indexPath.row])  + " Kg - T: \(produzioneLotto!.tara[indexPath.row]) Kg - \(produzioneLotto!.dataLavorazione[indexPath.row]!)"
-        cell.detailTextLabel!.text = String(describing: produzioneLotto!.note[indexPath.row]!)
+        cell.textLabel?.text = "BB n. \(indexPath.row + 1) - N: " +   String(describing: produzioneLotto!.quantity[indexPath.row])  + " Kg - T: \(produzioneLotto!.tara[indexPath.row]) Kg - \(produzioneLotto!.dataLavorazione[indexPath.row])"
+        cell.detailTextLabel!.text = String(describing: produzioneLotto!.note[indexPath.row])
         return cell
     }
     
@@ -197,11 +197,11 @@ class InsertDataSIViewController: UIViewController, UITableViewDelegate, UITable
         
         let noteToMove = produzioneLotto?.note[fromIndexPath.row]
         produzioneLotto?.note.remove(at: fromIndexPath.row)
-        produzioneLotto?.note.insert(noteToMove, at: to.row)
+        produzioneLotto?.note.insert(noteToMove!, at: to.row)
         
         let tempoToMove = produzioneLotto?.dataLavorazione[fromIndexPath.row]
         produzioneLotto?.dataLavorazione.remove(at: fromIndexPath.row)
-        produzioneLotto?.dataLavorazione.insert(tempoToMove, at: to.row)
+        produzioneLotto?.dataLavorazione.insert(tempoToMove!, at: to.row)
         
         tableView.reloadData()
         

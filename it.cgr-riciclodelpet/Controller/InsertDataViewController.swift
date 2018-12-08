@@ -76,7 +76,7 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
             
         }
         // CARICO DA FIREBASE LE LAVORAZIONI PER PICKER VIEW
-        anagraficaLavorazioniDatabaseRef.observe(.value) { (snapShot) in
+        anagraficaLavorazioniDatabaseRef.queryOrdered(byChild: "Reparto").queryStarting(atValue: codificaLotto!).queryEnding(atValue: codificaLotto!).observe(.value) { (snapShot) in
             self.listaLavorazioniCodice = []
         
             for item in snapShot.children {
@@ -160,8 +160,8 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProduzioneCell", for: indexPath as IndexPath)
-        cell.textLabel?.text = "BB n. \(indexPath.row + 1) - N: " +   String(describing: produzioneLotto!.quantity[indexPath.row])  + " Kg - T: \(produzioneLotto!.tara[indexPath.row]) Kg - \(produzioneLotto!.dataLavorazione[indexPath.row]!)"
-        cell.detailTextLabel!.text = String(describing: produzioneLotto!.note[indexPath.row]!)
+        cell.textLabel?.text = "BB n. \(indexPath.row + 1) - N: " +   String(describing: produzioneLotto!.quantity[indexPath.row])  + " Kg - T: \(produzioneLotto!.tara[indexPath.row]) Kg - \(produzioneLotto!.dataLavorazione[indexPath.row])"
+        cell.detailTextLabel!.text = String(describing: produzioneLotto!.note[indexPath.row])
         return cell
     }
     
@@ -235,11 +235,11 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
         produzioneLotto?.tara.remove(at: fromIndexPath.row)
         produzioneLotto?.tara.insert(taraToMove, at: to.row)
         
-        let noteToMove = produzioneLotto?.note[fromIndexPath.row]
+        let noteToMove = produzioneLotto!.note[fromIndexPath.row]
         produzioneLotto?.note.remove(at: fromIndexPath.row)
         produzioneLotto?.note.insert(noteToMove, at: to.row)
         
-        let tempoToMove = produzioneLotto?.dataLavorazione[fromIndexPath.row]
+        let tempoToMove = produzioneLotto!.dataLavorazione[fromIndexPath.row]
         produzioneLotto?.dataLavorazione.remove(at: fromIndexPath.row)
         produzioneLotto?.dataLavorazione.insert(tempoToMove, at: to.row)
     
@@ -300,7 +300,7 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func inserisciDati(_ sender: Any) {
-       
+        
         if produzioneLotto!.quantity.count > 0 {
             let produzioneDettaglioRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
             let quantitaRef: DatabaseReference = Database.database().reference().child("quantita")
@@ -309,15 +309,33 @@ class InsertDataViewController: UIViewController, UITableViewDelegate, UITableVi
            
             if let lotto = lottoLabel.text {
                 if let miscela = miscelaLabel.text {
-                let firebaseLotto = "\(codificaLotto!)\(lotto)M\(miscela)"
+                    let firebaseLotto = "\(codificaLotto!)\(lotto)M\(miscela)"
+                    let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+                    activityIndicator.startAnimating()
+                    activityIndicator.center = self.view.center
+                    self.view.addSubview(activityIndicator)
+
                     produzioneDettaglioRef.child(firebaseLotto).setValue(["Articolo": articolo, "Dettaglioquantita": produzioneLotto!.quantity, "Dettaglionota": produzioneLotto!.note, "Dettagliotempo": produzioneLotto!.dataLavorazione, "Dettagliotara": produzioneLotto!.tara, "Lavorazione": lavorazioneLabel.text!])
                 let ncolli = produzioneLotto!.quantity.count
+                let dataFineLotto = produzioneLotto!.dataLavorazione.last
                 
                     somma = produzioneLotto!.calcoloQuantitaLotto(dettaglioLotto: produzioneLotto!.quantity)
-                    quantitaRef.child(firebaseLotto).setValue(["ncolli": ncolli,"quantita": somma, "operatore": userID ?? "Ignoto", "lavorazione": lavorazioneLabel.text! ])
+                    quantitaRef.child(firebaseLotto).setValue(["ncolli": ncolli,"quantita": somma, "operatore": userID ?? "Ignoto", "lavorazione": lavorazioneLabel.text!, "dataFineLotto": dataFineLotto!])
+                    activityIndicator.stopAnimating()
+                    activityIndicator.removeFromSuperview()
+                    _ = self.navigationController?.popViewController(animated: true)
                 }
             }
-        } else { print("Impossibile aggiungere una scheda vuota") }
+        } else {
+            print("Impossibile aggiungere una scheda vuota")
+            let alertController = UIAlertController(title: "Errore", message: "Impossibile inserire una scheda vuota", preferredStyle: UIAlertControllerStyle.alert)
+            let continuaAction = UIAlertAction(title: "Continua", style: UIAlertActionStyle.default, handler: {
+                (action : UIAlertAction!) -> Void in
+                
+            })
+            alertController.addAction(continuaAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Navigation

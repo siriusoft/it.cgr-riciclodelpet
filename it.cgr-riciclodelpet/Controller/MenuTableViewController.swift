@@ -13,7 +13,11 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
+               /* let manutenzione = ProgrammaDiManutenzione(codiceMacchinario: "MUL1600", descrizioneManutenzione: ["CambioLame"], frequenzaManutenzione: [200000], dateManutenzione: [""])
+                manutenzione.calcolaProduzioneDaUltimaManutenzione(dataUltimaManutenzione: "28/03/2018 22:00", reparto: "L", completionHandler: {(somma) in
+                    print("la somma è: \(somma)")})*/
                 performSegue(withIdentifier: "preconsumoSegue", sender: "L")
+                
             }
             if indexPath.row == 1 {
                 performSegue(withIdentifier: "preconsumoSegue", sender: "A")

@@ -1,8 +1,8 @@
 //
-//  AnagraficaLavorazioniTableViewController.swift
+//  AnagraficaArticoliTableViewController.swift
 //  it.cgr-riciclodelpet
 //
-//  Created by Alberto Rimini on 24/03/18.
+//  Created by Alberto Rimini on 25/02/18.
 //  Copyright © 2018 Alberto Rimini. All rights reserved.
 //
 
@@ -11,19 +11,16 @@ import Firebase
 import WebKit
 import FirebaseDatabase
 
+class AnagraficaArticoliTableViewController: UITableViewController, UISearchBarDelegate {
 
-
-    
-class AnagraficaLavorazioniTableViewController: UITableViewController, UISearchBarDelegate {
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     
     
-    let anagraficaLavorazioniDatabaseRef: DatabaseReference = Database.database().reference().child("anagraficaLavorazioni")
+    let anagraficaArticoliDatabaseRef: DatabaseReference = Database.database().reference().child("anagraficaArticoli")
     
-    var listaLavorazioni = [AnagraficaLavorazione]()
-    var listaLavorazioniFiltrata = [AnagraficaLavorazione]()
+    var listaArticoli = [AnagraficaArticoli]()
+    var listaArticoliFiltrata = [AnagraficaArticoli]()
     
     
     
@@ -33,22 +30,24 @@ class AnagraficaLavorazioniTableViewController: UITableViewController, UISearchB
         super.viewDidLoad()
         setUpSearchbar()
         
-        anagraficaLavorazioniDatabaseRef.observe(.value) { (snapShot) in
-            self.listaLavorazioni = []
-            self.listaLavorazioniFiltrata = []
+         anagraficaArticoliDatabaseRef.observe(.value) { (snapShot) in
+            self.listaArticoli = []
+            self.listaArticoliFiltrata = []
             for item in snapShot.children {
                 
                 let firebaseData = item as! DataSnapshot
-                let codiceLavorazione = firebaseData.key
+                let codiceArticolo = firebaseData.key
                 
-                let anagraficaLavorazione = firebaseData.value as! [String: Any]
-                let descrizione: String = String(describing: anagraficaLavorazione["Descrizione"]!)
-                let autore: String = String(describing: anagraficaLavorazione["Autore"]!)
-                let repartoChar: String = String(describing: anagraficaLavorazione["Reparto"]!)
-                let Lavorazione = AnagraficaLavorazione(codiceLavorazione: codiceLavorazione, descrizioneLavorazione: descrizione, autore: autore, repartoChar: repartoChar)
-                self.listaLavorazioni.append(Lavorazione)
+                let anagraficaArticolo = firebaseData.value as! [String: Any]
+                let descrizioneEstesa: String = String(describing: anagraficaArticolo["DescrizioneEstesa"]!)
+                let descrizioneSintetica: String = String(describing: anagraficaArticolo["DescrizioneSintetica"]!)
+                let autore: String = String(describing: anagraficaArticolo["Autore"]!)
+                let codiceAttivo: String = String(describing: anagraficaArticolo["CodiceAttivo"]!)
                 
-                self.listaLavorazioniFiltrata = self.listaLavorazioni
+                let articolo = AnagraficaArticoli(codice: codiceArticolo, descrizioneEstesa: descrizioneEstesa, descrizioneSintetica: descrizioneSintetica, autore: autore, codiceAttivo: codiceAttivo )
+                self.listaArticoli.append(articolo)
+                
+                self.listaArticoliFiltrata = self.listaArticoli
                 self.tableView.reloadData()
                 
             }
@@ -81,26 +80,26 @@ class AnagraficaLavorazioniTableViewController: UITableViewController, UISearchB
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return listaLavorazioniFiltrata.count
+        return listaArticoliFiltrata.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LavorazioneCell", for: indexPath)
-        let item = listaLavorazioniFiltrata[indexPath.row]
-        cell.detailTextLabel?.text = item.descrizioneLavorazione
-        cell.textLabel?.text = "\(item.codiceLavorazione)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticoloCell", for: indexPath)
+        let item = listaArticoliFiltrata[indexPath.row]
+        cell.detailTextLabel?.text = item.descrizioneEstesa
+        cell.textLabel?.text = "\(item.codice): \(item.descrizioneSintetica)"
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "anagraficaLavorazioneSegue", sender: listaLavorazioniFiltrata[indexPath.row])
+        performSegue(withIdentifier: "anagraficaArticoloSegue", sender: listaArticoliFiltrata[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue , sender: Any? ) {
-        if segue.identifier == "anagraficaLavorazioneSegue" {
-            let vc = segue.destination as! InsertAnagraficaLavorazioneViewController
-            vc.anagraficaLavorazione = sender as? AnagraficaLavorazione
+        if segue.identifier == "anagraficaArticoloSegue" {
+            let vc = segue.destination as! InsertAnagraficaArticoloViewController
+            vc.anagraficaArticolo = sender as? AnagraficaArticoli
         }
         
     }
@@ -125,9 +124,9 @@ class AnagraficaLavorazioniTableViewController: UITableViewController, UISearchB
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            let deleteItem = listaLavorazioniFiltrata[indexPath.row]
-            self.listaLavorazioniFiltrata.remove(at: indexPath.row)
-            self.anagraficaLavorazioniDatabaseRef.child(deleteItem.codiceLavorazione).removeValue()
+            let deleteItem = listaArticoliFiltrata[indexPath.row]
+            self.listaArticoliFiltrata.remove(at: indexPath.row)
+            self.anagraficaArticoliDatabaseRef.child(deleteItem.codice).removeValue()
             
             
             // Delete the row from the data source
@@ -167,24 +166,23 @@ class AnagraficaLavorazioniTableViewController: UITableViewController, UISearchB
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
-            listaLavorazioniFiltrata = listaLavorazioni
+            listaArticoliFiltrata = listaArticoli
             tableView.reloadData()
             return
         }
-        listaLavorazioniFiltrata = listaLavorazioni.filter { (lottoProduzione) -> Bool in
+        listaArticoliFiltrata = listaArticoli.filter { (lottoProduzione) -> Bool in
             
-            return lottoProduzione.codiceLavorazione.lowercased().contains(searchText.lowercased())
+            return lottoProduzione.codice.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
     }
     
     @IBAction func aggiungiLotto(_ sender: Any) {
-        performSegue(withIdentifier: "anagraficaLavorazioneSegue", sender: nil/*AnagraficaArticoli(codice: "", descrizioneEstesa: "", descrizioneSintetica: "", autore: "", codiceAttivo: "")*/ )
+        performSegue(withIdentifier: "anagraficaArticoloSegue", sender: nil/*AnagraficaArticoli(codice: "", descrizioneEstesa: "", descrizioneSintetica: "", autore: "", codiceAttivo: "")*/ )
         
         
     }
     
 }
-
 
 

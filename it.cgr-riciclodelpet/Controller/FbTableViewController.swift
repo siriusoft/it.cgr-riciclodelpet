@@ -376,7 +376,7 @@ class FbTableViewController: UITableViewController, UISearchBarDelegate {
         
         for scheda in listaProduzione {
             for i in 0..<scheda.quantity.count {
-                let newLine = "\(String(describing: scheda.dataLavorazione[i]!)),\(scheda.codiceProdotto),\(scheda.lotto),\(i + 1),\(scheda.quantity[i]),\(scheda.tara[i]),\(scheda.lavorazione),\(scheda.produttore),\(scheda.note[i]!)\n"
+                let newLine = "\(String(describing: scheda.dataLavorazione[i])),\(scheda.codiceProdotto),\(scheda.lotto),\(i + 1),\(scheda.quantity[i]),\(scheda.tara[i]),\(scheda.lavorazione),\(scheda.produttore),\(scheda.note[i])\n"
                 csvText.append(newLine)
             }
             

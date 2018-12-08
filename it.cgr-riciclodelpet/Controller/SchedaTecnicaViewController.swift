@@ -20,6 +20,7 @@ class SchedaTecnicaViewController: UIViewController {
     @IBOutlet weak var pvcLotto: UITextField!
     @IBOutlet weak var peLotto: UITextField!
   
+    @IBOutlet weak var psLotto: UITextField!
     @IBOutlet weak var ingiallimentoLotto: UITextField!
     
     @IBOutlet weak var approvatoSwitch: UISwitch!
@@ -54,12 +55,16 @@ class SchedaTecnicaViewController: UIViewController {
             if let pe = schedaTecnica["PE"] {
                 self.peLotto.text = String(describing: pe)
             }
+            
+            if let ps = schedaTecnica["PS"] {
+                self.psLotto.text = String(describing: ps)
+            }
         
             if let metalli = schedaTecnica["Metalli"] {
                 self.metalliLotto.text = String(describing: metalli)
             }
        
-            if let altriColori = schedaTecnica["Altri Colori"] {
+            if let altriColori = schedaTecnica["Altri colori"] {
             self.altriColoriLotto.text = String(describing: altriColori)
             }
                 
@@ -81,7 +86,7 @@ class SchedaTecnicaViewController: UIViewController {
                 self.noteLotto.text = String(describing: note)
             }
             
-            if let colle = schedaTecnica["Colle"] {
+            if let colle = schedaTecnica["Colla"] {
                 self.collaLotto.text = String(describing: colle)
             }
         
@@ -132,7 +137,7 @@ class SchedaTecnicaViewController: UIViewController {
         if approvatoSwitch.isOn {
             approvatoFirebase = "Si"
         } else { approvatoFirebase = "No" }
-        let schedaTecnicaAggiornata = ["PVC": pvcLotto.text, "PE": peLotto.text,"Metalli": metalliLotto.text, "Ingiallimento": ingiallimentoLotto.text, "Altri colori": altriColoriLotto.text, "Colla": collaLotto.text, "Note": noteLotto.text, "Approvato": approvatoFirebase]
+        let schedaTecnicaAggiornata = ["PVC": pvcLotto.text, "PE": peLotto.text, "PS": psLotto.text, "Metalli": metalliLotto.text, "Ingiallimento": ingiallimentoLotto.text, "Altri colori": altriColoriLotto.text, "Colla": collaLotto.text, "Note": noteLotto.text, "Approvato": approvatoFirebase]
         
         schedaTecnicaRef.child(lottoItem!).setValue(schedaTecnicaAggiornata)
     }

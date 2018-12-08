@@ -10,6 +10,8 @@
     
     import UIKit
     import Firebase
+
+
 class InsertPackingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowPackingList {
     
     func AddItemtoPackingList(dettaglioPackingList: PackingList) {
@@ -60,6 +62,7 @@ class InsertPackingListViewController: UIViewController, UITableViewDelegate, UI
             if let id =  dettaglioPackingList?.identificativo { idLabel.text = id }
             if let ddt = dettaglioPackingList?.ddtCollegato { ddtLabel.text = ddt }
             if let ddtData = dettaglioPackingList?.annoDdtCollegato { ddtDataLabel.text = ddtData}
+            
             
             
         }
@@ -185,7 +188,16 @@ class InsertPackingListViewController: UIViewController, UITableViewDelegate, UI
                 qrCodeLista.append(qrCode)
                 }
                 packingListDatabaseRef.child(id).setValue(["QRCodeLista": qrCodeLista , "Autore": autore!, "DdtNumero": ddt!, "DdtData": ddtData!, "IdData": dataId])
-            } else {print("Non si può salvare un packing list vuoto")}
+                 _ = self.navigationController?.popViewController(animated: true)
+            } else {
+                let alertController = UIAlertController(title: "Errore", message: "Impossibile inserire una scheda vuota", preferredStyle: UIAlertControllerStyle.alert)
+                let continuaAction = UIAlertAction(title: "Continua", style: UIAlertActionStyle.default, handler: {
+                    (action : UIAlertAction!) -> Void in
+                    
+                })
+                print("Non si può salvare un packing list vuoto")
+                
+            }
                     
             
         }

@@ -14,8 +14,8 @@ class DettaglioProduzione {
     var codiceProdotto: String
     var quantity: [Int]
     var tara: [Int]
-    var note: [String?]
-    var dataLavorazione: [String?]
+    var note: [String]
+    var dataLavorazione: [String]
     var lavorazione: String
     var produttore: String
     
