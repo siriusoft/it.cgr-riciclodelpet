@@ -1,0 +1,6 @@
+framework module Pods_it_cgr_riciclodelpet {
+  umbrella header "Pods-it.cgr-riciclodelpet-umbrella.h"
+
+  export *
+  module * { export * }
+}

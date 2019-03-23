@@ -29,8 +29,8 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
         self.setValue(NSValue(cgRect: pageFrame.insetBy(dx: 5.0, dy: 5.0)), forKey: "printableRect")
         
         
-        self.headerHeight = 10.0
-        self.footerHeight = 10.0
+        self.headerHeight = 50.0
+        self.footerHeight = 50.0
     }
     
     
@@ -85,7 +85,7 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
     
     */
     
-    func getTextSize(text: String, font: UIFont!, textAttributes: [NSAttributedStringKey: Any]! = nil) -> CGSize {
+   /* func getTextSize(text: String, font: UIFont!, textAttributes: [NSAttributedStringKey: Any]! = nil) -> CGSize {
         let testLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: self.paperRect.size.width, height: footerHeight))
         if let attributes = textAttributes {
             testLabel.attributedText = NSAttributedString(string: text, attributes: attributes)
@@ -98,7 +98,7 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
         testLabel.sizeToFit()
         
         return testLabel.frame.size
-    }
+    }*/
     
 }
 

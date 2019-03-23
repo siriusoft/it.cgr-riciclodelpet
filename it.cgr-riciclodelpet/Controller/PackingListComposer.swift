@@ -124,8 +124,8 @@ class PackingListComposer: NSObject {
     
     func exportHTMLContentToPDF(HTMLContent: String, printFormatter: UIViewPrintFormatter) {
         let printPageRenderer = CustomPrintPageRenderer()
-        
-        //let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+        //formatter.maximumContentHeight = 605.0
+        //let printFormatter2 = UIMarkupTextPrintFormatter(markupText: HTMLContent)
         printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
         
         let pdfData = drawPDFUsingPrintPageRenderer(printPageRenderer: printPageRenderer)
@@ -143,7 +143,7 @@ class PackingListComposer: NSObject {
         UIGraphicsBeginPDFContextToData(data, CGRect.zero, nil)
         for i in 0..<printPageRenderer.numberOfPages {
             UIGraphicsBeginPDFPage()
-            printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+            printPageRenderer.drawPage(at: i, in: CGRect.init(x: 0, y: 0, width: 595.2, height: 841.8))
         }
         
         UIGraphicsEndPDFContext()
