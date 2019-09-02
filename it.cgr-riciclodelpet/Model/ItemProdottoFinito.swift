@@ -48,15 +48,20 @@ class Articolo {
     var kg: Int
     var colli: Int
     var tara: Int
+    var qualita: String
     
-    init(articolo: String, lotto: String, kg:Int, colli: Int, tara: Int) {
+    init(articolo: String, lotto: String, kg:Int, colli: Int, tara: Int, qualita: String) {
         self.articolo = articolo
         self.lotto = lotto
         self.kg = kg
         self.colli = colli
         self.tara = tara
+        self.qualita = qualita
     }
+    
 }
+
+
 
 
 class ItemProdottoFinito { 
@@ -75,6 +80,31 @@ class ItemProdottoFinito {
         self.numeroBb = numeroBb
         self.dataProduzione = dataProduzione
         self.codiceBarra = codiceBarra
+        
+    }
+    
+    // Manca ancora verificare che barCode sia una stringa valida
+}
+
+
+class ItemProdottoFinitoCq {
+    var codice: String
+    var quantityKg: Int
+    var taraKg: Int
+    var lotto: String
+    var numeroBb: Int
+    var dataProduzione: String
+    var codiceBarra: String
+    var qualita: String
+    init(codice: String, lotto: String, numeroBb: Int, quantityKg: Int, taraKg: Int, dataProduzione: String, codiceBarra: String, qualita: String) {
+        self.codice = codice
+        self.lotto =  lotto
+        self.quantityKg = quantityKg
+        self.taraKg = taraKg
+        self.numeroBb = numeroBb
+        self.dataProduzione = dataProduzione
+        self.codiceBarra = codiceBarra
+        self.qualita = qualita
         
     }
     

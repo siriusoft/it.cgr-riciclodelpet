@@ -122,6 +122,9 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
         }
         
         
+        
+        
+        
       
 
         // Do any additional setup after loading the view.

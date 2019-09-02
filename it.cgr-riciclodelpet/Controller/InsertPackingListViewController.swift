@@ -19,9 +19,9 @@ class InsertPackingListViewController: UIViewController, UITableViewDelegate, UI
     }
     
         
-        
+        let qualitaDatabaseRef: DatabaseReference = Database.database().reference().child("qualita")
         var dettaglioPackingList: PackingList?
-        
+        var listaArticoliPerDdt = [Articolo]()
         @IBOutlet weak var dataLabel: UITextField!
         
         
@@ -207,16 +207,17 @@ class InsertPackingListViewController: UIViewController, UITableViewDelegate, UI
         // MARK: - Navigation
         
        @IBAction func ricettaAdd(_ sender: Any) {
-        
+        var passaggi: Int = 0
             let predicate2 = { (element: ItemProdottoFinito) in
             return element.lotto
             }
         
             let array = dettaglioPackingList!.listaColli!
-            var listaArticoliPerDdt = [Articolo]()
+        
         
             let lottoDictionary = Dictionary(grouping: array,by: predicate2)
             for (lotto,items) in lottoDictionary {
+                
                 var totale = 0
                 var totaleTara = 0
                 var i = 0
@@ -229,10 +230,36 @@ class InsertPackingListViewController: UIViewController, UITableViewDelegate, UI
                     totaleTara += item.taraKg
                 }
                 
-                let articolo = Articolo(articolo: codice ,lotto: lotto, kg: totale, colli: i, tara: totaleTara)
-                listaArticoliPerDdt.append(articolo)
+              
+              
+                    self.downloadQualita(lotto: lotto) { (qualita) in
+                    let articolo = Articolo(articolo: codice, lotto: lotto, kg: totale, colli: i, tara: totaleTara, qualita: qualita)
+                        self.listaArticoliPerDdt.append(articolo)
+                    passaggi += 1
+                  
+
+                }
+               
+               
+                
+              
+               
             }
-            performSegue(withIdentifier: "ddtSegue", sender: listaArticoliPerDdt)
+        
+        let queue = DispatchQueue.init(label: "it.xcoding.queue")
+        
+        queue.async {
+            while self.listaArticoliPerDdt.count < lottoDictionary.count {
+                
+            }
+            self.vaiAllaFinestra()
+           
+            
+        }
+        
+            if passaggi == lottoDictionary.count {
+                //performSegue(withIdentifier: "ddtSegue", sender: listaArticoliPerDdt)
+            }
         }
        
         
@@ -287,6 +314,31 @@ class InsertPackingListViewController: UIViewController, UITableViewDelegate, UI
             
         }
 
-
+    func downloadQualita(lotto: String,completion: @escaping (String) -> Void) {
+        
+        qualitaDatabaseRef.child(lotto).observeSingleEvent(of: .value, with: { (snap) in
+          guard let schedaTecnica = snap.value as? [String: Any]
+                else {
+                    completion("Scheda tecnica mancante")
+                    return
+                    
+            }
+            
+            guard let approvato = schedaTecnica["Approvato"] else {return}
+        completion(approvato as! String)
+       })
+        
+    }
+    
+    func vaiAllaFinestra() {
+        DispatchQueue.main.async {
+            // ritorno sul main thread ed aggiorno la view
+            self.performSegue(withIdentifier: "ddtSegue", sender: self.listaArticoliPerDdt)
+            // qui aggiorno la view
+        }
+        
+    
+    }
+    
 }
 

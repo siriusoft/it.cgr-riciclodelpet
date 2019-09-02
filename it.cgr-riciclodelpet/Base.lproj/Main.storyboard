@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="asU-Vu-hiS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="asU-Vu-hiS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -287,7 +287,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Cerca Lotto" id="xLt-gk-eY5">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Cerca" id="xLt-gk-eY5">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -325,6 +325,15 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="BsG-sT-q45">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="HNR-55-eN3">
+                            <rect key="frame" x="125" y="7" width="125" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Lotto"/>
+                                <segment title="Articolo"/>
+                            </segments>
+                        </segmentedControl>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="0GS-uP-Jn0">
                                 <connections>
@@ -340,6 +349,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="sceltaVisualizzazione" destination="HNR-55-eN3" id="zJY-0z-mTn"/>
                         <outlet property="searchBar" destination="xLt-gk-eY5" id="vVp-on-14Y"/>
                         <segue destination="b3F-LI-ade" kind="show" identifier="schedaTecnicaSegue" id="8i6-Hh-Z35"/>
                         <segue destination="qs4-aq-0Oi" kind="show" identifier="dettaglioSegue" id="Znw-1z-ulw"/>
@@ -995,9 +1005,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="f4B-nD-HIj">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="macchinarioCell" rowHeight="61" id="rmW-2k-SiG" customClass="MacchinariTableViewCell" customModule="it_cgr_riciclodelpet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rmW-2k-SiG" id="1Go-Z9-eUz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
@@ -1058,6 +1073,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="macchinariTableView" destination="IT8-Zp-5h1" id="6M6-Rl-wbI"/>
+                        <outlet property="searchBar" destination="f4B-nD-HIj" id="ahf-Eb-63g"/>
                         <segue destination="fqX-en-K1Y" kind="show" identifier="macchinarioSegue" id="ido-lx-Sau"/>
                         <segue destination="fqX-en-K1Y" kind="show" identifier="nuovoMacchinarioSegue" id="cbs-77-qUq"/>
                     </connections>
@@ -1366,7 +1382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Plo-Ju-pkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963" y="-2529"/>
+            <point key="canvasLocation" x="1182" y="-2875"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="SGi-FR-GwA">
@@ -2693,7 +2709,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CGR Iogo firma" width="128.63999938964844" height="56.639999389648438"/>
+        <image name="CGR Iogo firma" width="134" height="59"/>
         <image name="Default" width="16" height="16"/>
         <image name="background" width="1280" height="949"/>
         <image name="background1" width="1800" height="1192.5"/>

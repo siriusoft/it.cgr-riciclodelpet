@@ -13,8 +13,9 @@ import Kingfisher
 
 
 
-class MacchinariTableViewController: UITableViewController {
+class MacchinariTableViewController: UITableViewController, UISearchBarDelegate {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var macchinariTableView: UITableView!
     var listaNodi: [String] = ["CGR"]
     let imageUrlDefault = "https://firebasestorage.googleapis.com/v0/b/cgr-riciclodelpet.appspot.com/o/images%2FDefaultImage.jpg?alt=media&token=692a5cbd-1ab9-4973-8321-956dc815457c"
@@ -31,6 +32,7 @@ class MacchinariTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        setUpSearchbar()
         listaMacchinariDatabaseRef.observe(.value) { (snapShot) in
             self.listaMacchinari = []
             self.listaMacchinariFiltrata = []
@@ -145,6 +147,8 @@ class MacchinariTableViewController: UITableViewController {
     }
     
     @objc func inserisciLivello(_ sender: UIButton) {
+        
+        
       
         performSegue(withIdentifier: "macchinarioSegue", sender: listaMacchinariFiltrata[sender.tag])
 
@@ -243,6 +247,21 @@ class MacchinariTableViewController: UITableViewController {
     }
     
     @IBAction func inseriscimacchinario(_ sender: UIBarButtonItem) {
+        //Solo per caricare i dati
+        
+        /*for item in listaMacchinari {
+            if let elencoManutenzioni = item.listaManutenzioni {
+                for manutenzioneSingola in elencoManutenzioni {
+                    item.calcolaDataUltimaManutenzione(codiceMacchinario: item.codice, descrizioneManutenzione: manutenzioneSingola) { (dataUltimaManutenzione) in
+                        print("\(item.codice) - \(manutenzioneSingola): \(dataUltimaManutenzione)")
+                        listaUltimeManutenzioni
+                    }
+                    
+                }
+            }
+            
+        }
+        // fine solo per caricare i dati*/
         performSegue(withIdentifier: "nuovoMacchinarioSegue", sender: self)
     }
     
@@ -263,5 +282,32 @@ class MacchinariTableViewController: UITableViewController {
         tableView.reloadData()
 
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            listaMacchinariFiltrata = listaMacchinari.filter { (macchinari) -> Bool in
+                
+                return macchinari.codiceGenitore.elementsEqual("CGR")
+            }
+            //livelloAttuale = listaMacchinariFiltrata.first?.codiceGenitore ?? ""
+            self.title = "Componenti di CGR"
+            tableView.reloadData()
+            return
+        }
+        listaMacchinariFiltrata = listaMacchinari.filter { (macchinari) -> Bool in
+            
+            return macchinari.codice.lowercased().contains(searchText.lowercased())
+        }
+        tableView.reloadData()
+    }
+    
+    private func setUpSearchbar() {
+        searchBar.delegate = self
+    }
+    
+    
+    
+    
+    
     
 }

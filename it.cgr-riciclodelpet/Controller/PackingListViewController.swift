@@ -22,9 +22,10 @@ class PackingListViewController: UITableViewController, UISearchBarDelegate {
     
     
     let packingListDatabaseRef: DatabaseReference = Database.database().reference().child("packinglist")
-    
+    let qualitaDatabaseRef: DatabaseReference = Database.database().reference().child("qualita")
     var packingList = [PackingList]()
     var packingListFiltrata = [PackingList]()
+    var ControlloQualitaLista = [String]()
     
     
     
@@ -52,6 +53,8 @@ class PackingListViewController: UITableViewController, UISearchBarDelegate {
                     let QrCodeItemSpedito = CodiceBarra(barCode: qrCode)
                     if let itemSpedito = QrCodeItemSpedito.riconosciQrCode() {
                     listaColli.append(itemSpedito)
+                        
+                        
                     }
                 }
                 let autore = Auth.auth().currentUser!.email
@@ -63,6 +66,7 @@ class PackingListViewController: UITableViewController, UISearchBarDelegate {
             }
             
         }
+      
         
         
         // Uncomment the following line to preserve selection between presentations

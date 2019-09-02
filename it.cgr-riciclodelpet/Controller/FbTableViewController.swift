@@ -21,6 +21,7 @@ class FbTableViewController: UITableViewController, UISearchBarDelegate {
     var codificaLotto: String?
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var sceltaVisualizzazione: UISegmentedControl!
     
 
     let prodDettaglioDatabaseRef: DatabaseReference = Database.database().reference().child("produzionedettaglio")
@@ -38,6 +39,8 @@ class FbTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSearchbar()
+        sceltaVisualizzazione.addTarget(self, action: #selector(segmentedControlValueChanged), for:.valueChanged)
+        sceltaVisualizzazione.addTarget(self, action: #selector(segmentedControlValueChanged), for:.touchUpInside)
         let fineQuery = codificaLotto! + "Z"
        
         prodDettaglioDatabaseRef.queryOrderedByKey().queryStarting(atValue: codificaLotto!).queryEnding(atValue: fineQuery).observe(.value) { (snapShot) in
@@ -253,9 +256,16 @@ class FbTableViewController: UITableViewController, UISearchBarDelegate {
             tableView.reloadData()
             return
         }
-        listaProduzioneFiltrata = listaProduzione.filter { (lottoProduzione) -> Bool in
+        if sceltaVisualizzazione.selectedSegmentIndex == 0 {
+            listaProduzioneFiltrata = listaProduzione.filter { (lottoProduzione) -> Bool in
            
-            return lottoProduzione.lotto.lowercased().contains(searchText.lowercased())
+                return lottoProduzione.lotto.lowercased().contains(searchText.lowercased())
+            }
+        } else {
+            listaProduzioneFiltrata = listaProduzione.filter { (lottoProduzione) -> Bool in
+                
+                return lottoProduzione.codiceProdotto.lowercased().contains(searchText.lowercased())
+            }
         }
         tableView.reloadData()
     }
@@ -404,6 +414,12 @@ class FbTableViewController: UITableViewController, UISearchBarDelegate {
             print("\(error)")
         }
         print(path ?? "not found")
+    }
+    
+    
+    @objc func segmentedControlValueChanged(segment: UISegmentedControl) {
+        
+        tableView.reloadData()
     }
 }
     

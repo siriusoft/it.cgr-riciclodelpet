@@ -63,6 +63,50 @@ class AnagraficaMacchinario {
         
     }
     
+    func calcolaDataUltimaManutenzione(codiceMacchinario: String, descrizioneManutenzione: String, completion:  @escaping (String)-> Void)  {
+        
+        //codice per caricare da firebase la lista di manutenzioni
+        
+        let manutenzioniDatabaseRef: DatabaseReference = Database.database().reference().child("listaManutenzioni")
+        
+        manutenzioniDatabaseRef.queryOrdered(byChild: "codiceMacchinario").queryEqual(toValue: codiceMacchinario).observe(.value, with: { (snapShot) in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+            var ultimaData = dateFormatter.date(from: "01/01/01 00:00") as! Date
+            for item in snapShot.children {
+                // carico da Firebase i dati della classe Dettaglio Produzione
+                let firebaseData = item as! DataSnapshot
+                let myManutenzione = firebaseData.value as! [String: Any]
+                let descrizioneManutenzioneEseguita = myManutenzione["descrizioneManutenzione"] as! String
+                if descrizioneManutenzioneEseguita == descrizioneManutenzione {
+                    let dataManutenzioneString: String = String(describing: myManutenzione["dataManutenzione"]!)
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                    let dataManutenzione: Date = dateFormatter.date(from: dataManutenzioneString)!
+                    if dataManutenzione > ultimaData {
+                        ultimaData = dataManutenzione
+                    }
+                }
+            }
+            let df = DateFormatter()
+            df.dateFormat = "dd/MM/yy HH:mm"
+            let ultimaDataString = df.string(from: ultimaData)
+           // print("L'ultima \(descrizioneManutenzione) di \(codiceMacchinario) è \(ultimaDataString)")
+            completion(ultimaDataString)
+            })
+        // fine codice per caricare da firebase la lista di manutenzioni
+        
+       
+    }
+    
+            
+            
+        
+        
+    
+        
+        
+    
 }
 
 

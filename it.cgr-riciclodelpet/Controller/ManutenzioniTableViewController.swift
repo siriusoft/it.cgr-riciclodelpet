@@ -81,6 +81,7 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
                     
                 }
                 
+              
                 // inizio CALCOLA LE MANUTENZIONI SCADUTE aggiunte in listaRitardoManutenzione
                 for item in self.listaManutenzioni {
                     
