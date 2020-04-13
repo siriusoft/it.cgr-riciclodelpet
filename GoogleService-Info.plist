@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>510478825972-7b65mbbt9hip2684t8ds8qacmf8o7geq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.510478825972-7b65mbbt9hip2684t8ds8qacmf8o7geq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA4UYMCnWQC0z6sRlLALKGCCt8hIsJQQmE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>510478825972</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>it.cgr-riciclodelpet</string>
+	<key>PROJECT_ID</key>
+	<string>cgr-riciclodelpet</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cgr-riciclodelpet.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:510478825972:ios:1c89c050c0ea7dee</string>
+	<key>DATABASE_URL</key>
+	<string>https://cgr-riciclodelpet.firebaseio.com</string>
+</dict>
+</plist>

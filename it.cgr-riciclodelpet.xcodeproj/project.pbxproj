@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE12CEDBFD457F29CE4900F2 /* Pods_it_cgr_riciclodelpet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74CCD93780B0C56EA9BE1DD /* Pods_it_cgr_riciclodelpet.framework */; };
 		F40F28171FFD262100935D7B /* ItemRicetta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F28161FFD262100935D7B /* ItemRicetta.swift */; };
 		F40F28181FFD262100935D7B /* ItemRicetta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F28161FFD262100935D7B /* ItemRicetta.swift */; };
 		F40F28191FFD262100935D7B /* ItemRicetta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F28161FFD262100935D7B /* ItemRicetta.swift */; };
@@ -63,7 +62,6 @@
 		F4E9145720ECF0020080C056 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E4172420EC1266005F6375 /* Foundation.framework */; };
 		F4E9145820ECF02B0080C056 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E4172A20EC1291005F6375 /* SystemConfiguration.framework */; };
 		F4E9145920ECF0360080C056 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E4172820EC1288005F6375 /* Security.framework */; };
-		F4EE0EEC20F6283B006F16C9 /* Pods_it_cgr_riciclodelpet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EE0EEB20F6283B006F16C9 /* Pods_it_cgr_riciclodelpet.framework */; };
 		F4F0E66E20820D8600A0A217 /* MacchinariTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0E66D20820D8600A0A217 /* MacchinariTableViewCell.swift */; };
 		F4F0E67020820DC700A0A217 /* MacchinariTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0E66F20820DC700A0A217 /* MacchinariTableViewController.swift */; };
 		F4F0E672208214B000A0A217 /* InsertMacchinarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0E671208214B000A0A217 /* InsertMacchinarioViewController.swift */; };
@@ -184,9 +182,7 @@
 				F4E9145920ECF0360080C056 /* Security.framework in Frameworks */,
 				F4E9145820ECF02B0080C056 /* SystemConfiguration.framework in Frameworks */,
 				F4E9145620ECEFD40080C056 /* MobileCoreServices.framework in Frameworks */,
-				F4EE0EEC20F6283B006F16C9 /* Pods_it_cgr_riciclodelpet.framework in Frameworks */,
 				F4E9145720ECF0020080C056 /* Foundation.framework in Frameworks */,
-				BE12CEDBFD457F29CE4900F2 /* Pods_it_cgr_riciclodelpet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
