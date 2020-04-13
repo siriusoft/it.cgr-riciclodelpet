@@ -109,6 +109,50 @@ class AnagraficaMacchinario {
     
 }
 
+class PianoDiManutenzione {
+    var codiceMacchinario: String
+    var descrizioneManutenzione: String
+    var dataUltimaManutenzione: String
+    
+    init(codiceMacchinario: String, descrizioneManutenzione: String, dataUltimaManutenzione: String) {
+        self.codiceMacchinario = codiceMacchinario
+        self.descrizioneManutenzione = descrizioneManutenzione
+        self.dataUltimaManutenzione = dataUltimaManutenzione
+    }
+    
+    
+    func calcolaProduzioneDaUltimaManutenzione(listaLavorazioni:[String], completionHandler:@escaping (Int) -> ()) {
+        let quantitaRef: DatabaseReference = Database.database().reference().child("quantita")
+        var somma: Int = 0
+        quantitaRef.observe(.value) { (snapShot) in
+            
+            for item in snapShot.children {
+                // carico da Firebase i dati della classe Dettaglio Produzione
+                let firebaseData = item as! DataSnapshot
+                //print(lotto)
+                let lottoProduzione = firebaseData.value as! [String: Any]
+                let dataProduzioneString: String = lottoProduzione["dataFineLotto"] as! String
+                let quantita: Int = lottoProduzione["quantita"] as! Int
+                let lavorazione: String = lottoProduzione["lavorazione"] as! String
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                if let dataManutenzione = dateFormatter.date(from: self.dataUltimaManutenzione) {
+                    if let dataProduzione = dateFormatter.date(from: dataProduzioneString) {
+                        if dataManutenzione < dataProduzione && listaLavorazioni.contains(lavorazione) {
+                        print("Lotto \(firebaseData.key): \(quantita) kg")
+                        somma += quantita
+                        }
+                    }
+                }
+                
+                
+            }
+            completionHandler(somma)
+        }
+        
+    }
+    
+}
 
 class Manutenzione {
     var codiceMacchinario: String

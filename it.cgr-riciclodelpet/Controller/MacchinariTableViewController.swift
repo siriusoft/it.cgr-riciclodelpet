@@ -21,8 +21,10 @@ class MacchinariTableViewController: UITableViewController, UISearchBarDelegate 
     let imageUrlDefault = "https://firebasestorage.googleapis.com/v0/b/cgr-riciclodelpet.appspot.com/o/images%2FDefaultImage.jpg?alt=media&token=692a5cbd-1ab9-4973-8321-956dc815457c"
     let imageDefault: UIImage = #imageLiteral(resourceName: "CGR Iogo firma")
     let listaMacchinariDatabaseRef: DatabaseReference = Database.database().reference().child("macchinari")
+    let listaUltimaDataManutenzioneRef: DatabaseReference = Database.database().reference().child("listaUltimeManutenzioni")
     var listaMacchinari = [AnagraficaMacchinario]()
     var listaMacchinariFiltrata = [AnagraficaMacchinario]()
+    
     var codiceGenitore: String = "CGR"
    /* let chiavi = ["Descrizione","FotoURL", "Codice", "CodiceGenitore", "ListaCaratteristiche"]
     let tipoChiavi = ["String", "String", "String", "String", "[String]"]*/
@@ -191,6 +193,7 @@ class MacchinariTableViewController: UITableViewController, UISearchBarDelegate 
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
             self.listaMacchinariDatabaseRef.child(deleteItem.codice).removeValue()
+            self.listaUltimaDataManutenzioneRef.child(deleteItem.codice).removeValue()
             //tableView.reloadData()
             let url = deleteItem.fotoUrl
             let storageRef = Storage.storage().reference(forURL: url!)
@@ -247,21 +250,35 @@ class MacchinariTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     @IBAction func inseriscimacchinario(_ sender: UIBarButtonItem) {
-        //Solo per caricare i dati
         
-        /*for item in listaMacchinari {
+        //DA COMPLETARE: Funzione per caricare i dati in Firebase dell'ultima manutenzione
+        //UTILIZZARE SOLO UNA VOLTA GIA FATTO
+      /*
+        for item in listaMacchinari {
+            var listaDataUltimaManutenzione = [String]()
             if let elencoManutenzioni = item.listaManutenzioni {
                 for manutenzioneSingola in elencoManutenzioni {
                     item.calcolaDataUltimaManutenzione(codiceMacchinario: item.codice, descrizioneManutenzione: manutenzioneSingola) { (dataUltimaManutenzione) in
-                        print("\(item.codice) - \(manutenzioneSingola): \(dataUltimaManutenzione)")
-                        listaUltimeManutenzioni
+                       // print("\(item.codice) - \(manutenzioneSingola): \(dataUltimaManutenzione)")
+                        listaDataUltimaManutenzione.append(dataUltimaManutenzione)
+                        if manutenzioneSingola == elencoManutenzioni.last! {
+                            print("\(item.codice) + \(listaDataUltimaManutenzione) ")
+                            let values = ["ListaManutenzioni": elencoManutenzioni,"ListaDataUltimaManutenzione": listaDataUltimaManutenzione] as [String : Any]
+                            self.listaUltimaDataManutenzioneRef.child(item.codice).setValue(values)
+                        }
+                        
                     }
                     
                 }
+                
+                //print("\(item.codice) + \(listaDataUltimaManutenzione) ")
+                //self.listaUltimaDataManutenzioneRef.removeValue()
+                
             }
             
         }
-        // fine solo per caricare i dati*/
+        // DA COMPLETARE: fine solo per caricare i dati */
+        
         performSegue(withIdentifier: "nuovoMacchinarioSegue", sender: self)
     }
     

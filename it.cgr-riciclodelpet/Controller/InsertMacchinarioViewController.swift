@@ -19,6 +19,7 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
     let listaMacchinariDatabaseRef: DatabaseReference = Database.database().reference().child("macchinari")
     let storageRef: StorageReference = Storage.storage().reference().child("images")
     let listaManutenzioniRef: DatabaseReference = Database.database().reference().child("listaManutenzioni")
+    let listaUltimaDataManutenzioneRef: DatabaseReference = Database.database().reference().child("listaUltimeManutenzioni")
     var anagraficaMacchinario: AnagraficaMacchinario?
     //var livelloAlbero: Int?
     var codiceGenitore: String?
@@ -236,7 +237,7 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
                 self.view.addSubview(activityIndicator)
                 
                 self.listaManutenzioniRef.childByAutoId().setValue(nuovaManutenzione)
-                
+                self.aggiornaDataUltimaManutenzione(codiceMacchin: self.codiceMacchinario.text!, descrizioneManut: self.anagraficaMacchinario!.listaManutenzioni![indexPath.row],dataManut: dataManutenzione.text!)
                 activityIndicator.stopAnimating()
                 activityIndicator.removeFromSuperview()
                 _ = self.navigationController?.popViewController(animated: true)
@@ -500,7 +501,7 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
     }
     
     @IBAction func salvaMacchinario(_ sender: Any) {
-        
+        var primoInserimento: Bool = true
         guard let codiceMacchinario = codiceMacchinario?.text else { return }
         
         if codiceMacchinario == "" { print("Impossibile salvare un macchinario senza codice")}
@@ -525,6 +526,7 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
                     return
                 } else {
                     print("Sei sicuro di voler modificare l'elemento??")
+                    primoInserimento = false
                     let alertController = UIAlertController(title: "Anagrafica Macchinario", message: "Sicuro di voler modificare il macchinario?", preferredStyle: UIAlertControllerStyle.alert)
                     let continuaAction = UIAlertAction(title: "Continua", style: UIAlertActionStyle.default, handler: {
                         (action : UIAlertAction!) -> Void in
@@ -548,15 +550,18 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
                     
             }
             print("controllo su codice superato")
-            
-            if imageDefault == true {
-                caricaDatiInDatabase(fotoMacchinarioUrl: imageUrlDefault)
-            } else {
-                if let optimizedImageData = UIImageJPEGRepresentation(fotoMacchinarioBis.currentImage!, 0.6) {
+        
+            if primoInserimento == true {
+                if imageDefault == true  {
+                    caricaDatiInDatabase(fotoMacchinarioUrl: imageUrlDefault)
+                } else {
+                    if let optimizedImageData = UIImageJPEGRepresentation(fotoMacchinarioBis.currentImage!, 0.6) {
                     uploadProfileImage(imageData: optimizedImageData)
-                }
+                    }
                 
+                }
             }
+            
            
         }
         
@@ -597,9 +602,11 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
                 if let myListaCaratteristiche = anagraficaMacchinario?.listaCaratteristiche {
                     let anagraficaAggiornata = ["Codice": codiceMacchinario.text!, "Descrizione": descrizioneMacchinario.text ?? "","FotoURL": fotoMacchinarioUrl,"ListaCaratteristiche": myListaCaratteristiche, "ListaManutenzioni": myListaManutenzioni, "ListaFrequenzaManutenzioni": anagraficaMacchinario!.listaFrequenzaManutenzioni!, "CodiceGenitore": codiceGenitore ?? "CGR"] as [String : Any]
                     listaMacchinariDatabaseRef.child(articoloItem).setValue(anagraficaAggiornata)
+                    aggiornaPianoManutenzione()
                 } else {
                     let anagraficaAggiornata = ["Codice": codiceMacchinario.text!, "Descrizione": descrizioneMacchinario.text ?? "","FotoURL": fotoMacchinarioUrl, "ListaManutenzioni": myListaManutenzioni, "ListaFrequenzaManutenzioni": anagraficaMacchinario!.listaFrequenzaManutenzioni!, "CodiceGenitore": codiceGenitore ?? "CGR"] as [String : Any]
                     listaMacchinariDatabaseRef.child(articoloItem).setValue(anagraficaAggiornata)
+                    aggiornaPianoManutenzione()
                     
                 }
             } else {
@@ -607,9 +614,12 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
                 if let myListaCaratteristiche = anagraficaMacchinario?.listaCaratteristiche {
                     let anagraficaAggiornata = ["Codice": codiceMacchinario.text!, "Descrizione": descrizioneMacchinario.text ?? "","FotoURL": fotoMacchinarioUrl,"ListaCaratteristiche": myListaCaratteristiche, "CodiceGenitore": codiceGenitore ?? "CGR"] as [String : Any]
                     listaMacchinariDatabaseRef.child(articoloItem).setValue(anagraficaAggiornata)
+                    aggiornaPianoManutenzione()
+                    
                 } else {
                     let anagraficaAggiornata = ["Codice": codiceMacchinario.text!, "Descrizione": descrizioneMacchinario.text ?? "","FotoURL": fotoMacchinarioUrl, "CodiceGenitore": codiceGenitore ?? "CGR"] as [String : Any]
                     listaMacchinariDatabaseRef.child(articoloItem).setValue(anagraficaAggiornata)
+                    aggiornaPianoManutenzione()
                     
                 }
             }
@@ -760,6 +770,138 @@ class InsertMacchinarioViewController: UIViewController, UIImagePickerController
     }
 
     
+    func aggiornaDataUltimaManutenzione(codiceMacchin: String, descrizioneManut: String, dataManut: String) {
+        
+//        aggiorna Data Ultima Manutenzione in "ListaUltimemanutenzioni" su FIREBASE
+        
+        // Carica piano di manutenzione per il solo macchinario di cui è stata aggiunta la manutenzione
+         var pianoManutenzioni = [PianoDiManutenzione]()
+        listaUltimaDataManutenzioneRef.child(codiceMacchin).observeSingleEvent(of: .value) { (snapShot) in
+         
+         let firebaseData = snapShot
+         let myPianoManutenzioneFB = firebaseData.value as! [String: Any]
+        
+         guard let listaManutenzioni: [String] = myPianoManutenzioneFB["ListaManutenzioni"] as? [String] else {
+             print("Errore 1")
+             
+                         return }
+         guard let listaDataUltimaManutenzione:[String] = myPianoManutenzioneFB["ListaDataUltimaManutenzione"] as? [String] else {return}
+         
+        // Cerca la posizione di manutenzione (descrizioneManut) all'interno del piano
+         for (index, element) in listaManutenzioni.enumerated() {
+             
+                 
+             let myPianoManutenzione = PianoDiManutenzione(codiceMacchinario: codiceMacchin, descrizioneManutenzione: element, dataUltimaManutenzione: listaDataUltimaManutenzione[index])
+             pianoManutenzioni.append(myPianoManutenzione)
+             }
+         
+         if let i1 = pianoManutenzioni.index(where: { (item) -> Bool in
+             (item.codiceMacchinario == codiceMacchin)
+         }) {
+             if let i2 = pianoManutenzioni.index(where: { (item) -> Bool in
+                 (item.codiceMacchinario == codiceMacchin) &&
+                     (item.descrizioneManutenzione == descrizioneManut)
+             }) {
+              
+              let dateFormatter = DateFormatter()
+                     dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+              let ultimaData = dateFormatter.date(from: pianoManutenzioni[i2].dataUltimaManutenzione)!
+              let nuovaData = dateFormatter.date(from: dataManut)!
+              if ultimaData < nuovaData {
+                 
+                     // cambia in firebase la data alla posizione i2-i1
+                 self.listaUltimaDataManutenzioneRef.child(codiceMacchin).child("ListaDataUltimaManutenzione").child("\(i2-i1)").setValue(dataManut)
+              }
+                 
+             }
+         }
+         }
+        /*
+        listaUltimaDataManutenzioneRef.child(codiceMacchin).observe(.value){ (snapShot) in
+            
+            let firebaseData = snapShot
+            let myPianoManutenzioneFB = firebaseData.value as! [String: Any]
+           
+            guard let listaManutenzioni: [String] = myPianoManutenzioneFB["ListaManutenzioni"] as? [String] else {
+                print("Errore 1")
+                
+                            return }
+            guard let listaDataUltimaManutenzione:[String] = myPianoManutenzioneFB["ListaDataUltimaManutenzione"] as? [String] else {return}
+            
+           // Cerca la posizione di manutenzione (descrizioneManut) all'interno del piano
+            for (index, element) in listaManutenzioni.enumerated() {
+                
+                    
+                let myPianoManutenzione = PianoDiManutenzione(codiceMacchinario: codiceMacchin, descrizioneManutenzione: element, dataUltimaManutenzione: listaDataUltimaManutenzione[index])
+                pianoManutenzioni.append(myPianoManutenzione)
+                }
+            
+            if let i1 = pianoManutenzioni.index(where: { (item) -> Bool in
+                (item.codiceMacchinario == codiceMacchin)
+            }) {
+                if let i2 = pianoManutenzioni.index(where: { (item) -> Bool in
+                    (item.codiceMacchinario == codiceMacchin) &&
+                        (item.descrizioneManutenzione == descrizioneManut)
+                }) {
+                 
+                 let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                 let ultimaData = dateFormatter.date(from: pianoManutenzioni[i2].dataUltimaManutenzione)!
+                 let nuovaData = dateFormatter.date(from: dataManut)!
+                 if ultimaData < nuovaData {
+                    
+                        // cambia in firebase la data alla posizione i2-i1
+                    self.listaUltimaDataManutenzioneRef.child(codiceMacchin).child("ListaDataUltimaManutenzione").child("\(i2-i1)").setValue(dataManut)
+                 }
+                    
+                }
+            }
+            } */
+
+        }
+ 
+    // AGGIORNARE PIANO DI MANUTENZIONE
+    func aggiornaPianoManutenzione() {
+           //DA COMPLETARE: Funzione per caricare i dati in Firebase dell'ultima manutenzione
+           //UTILIZZARE SOLO UNA VOLTA GIA FATTO
+         
+           
+        var listaDataUltimaManutenzione = [String]()
+        
+        if let elencoManutenzioni = anagraficaMacchinario?.listaManutenzioni {
+            if elencoManutenzioni.count == 0 {
+                anagraficaMacchinario?.codice = self.codiceMacchinario!.text!
+                self.listaUltimaDataManutenzioneRef.child(self.anagraficaMacchinario!.codice).removeValue()
+            } else {
+
+                   for manutenzioneSingola in elencoManutenzioni {
+                    anagraficaMacchinario!.calcolaDataUltimaManutenzione(codiceMacchinario: codiceMacchinario!.text!, descrizioneManutenzione: manutenzioneSingola) { (dataUltimaManutenzione) in
+                          // print("\(item.codice) - \(manutenzioneSingola): \(dataUltimaManutenzione)")
+                           listaDataUltimaManutenzione.append(dataUltimaManutenzione)
+                           if manutenzioneSingola == elencoManutenzioni.last! {
+                            print("\(self.codiceMacchinario!.text!) + \(listaDataUltimaManutenzione) ")
+                               let values = ["ListaManutenzioni": elencoManutenzioni,"ListaDataUltimaManutenzione": listaDataUltimaManutenzione] as [String : Any]
+                            self.listaUltimaDataManutenzioneRef.child(self.codiceMacchinario!.text!).setValue(values)
+                           }
+                           
+                       }
+                       
+                   }
+            }
+                   //print("\(item.codice) + \(listaDataUltimaManutenzione) ")
+                   //self.listaUltimaDataManutenzioneRef.removeValue()
+                   
+        } else {
+            anagraficaMacchinario?.codice = self.codiceMacchinario!.text!
+            self.listaUltimaDataManutenzioneRef.child(self.anagraficaMacchinario!.codice).removeValue()
+        }
+               
+           
+           // DA COMPLETARE: fine solo per caricare i dati
+    }
+              
+              
+        
     
     
 }

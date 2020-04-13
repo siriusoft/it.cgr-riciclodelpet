@@ -19,27 +19,28 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
     @IBOutlet weak var sceltaVisualizzazione: UISegmentedControl!
     
         @IBOutlet weak var searchBar: UISearchBar!
-        
+        let listaUltimaDataManutenzioneRef: DatabaseReference = Database.database().reference().child("listaUltimeManutenzioni")
         let anagraficaLavorazioniRef: DatabaseReference = Database.database().reference().child("anagraficaLavorazioni")
         let macchinariRef: DatabaseReference = Database.database().reference().child("macchinari")
         let utilizzoMacchinariRef: DatabaseReference = Database.database().reference().child("utilizzoMacchinari")
         let manutenzioniDatabaseRef: DatabaseReference = Database.database().reference().child("listaManutenzioni")
         let quantitaDatabaseRef: DatabaseReference = Database.database().reference().child("quantita")
         var listaManutenzioni = [Manutenzione]()
+        var pianoManutenzioni = [PianoDiManutenzione]()
         var listaManutenzioniFiltrata = [Manutenzione]()
         var listaChiaveManutenzioni = [String]()
         var listaChiaveManutenzioniFiltrata = [String]()
     
-        var listaUltimaManutenzione = [Manutenzione]()
+        var listaManutenzioniScadute = [Manutenzione]() //Lista delle manutenzioni scadute
         var listaUltimaManutenzioneFiltrata = [Manutenzione]()
-        var listaRitardoManutenzione = [Int]()
+        var listaRitardoManutenzione = [Int]() // Lista di Kg di ritardo delle manutenzioni scadute
 
         var userID = ""
         var actualTextField: UITextField?
         var dataManutenzione: String = ""
         
         
-    
+
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -47,9 +48,51 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
             sceltaVisualizzazione.addTarget(self, action: #selector(segmentedControlValueChanged), for:.valueChanged)
             sceltaVisualizzazione.addTarget(self, action: #selector(segmentedControlValueChanged), for:.touchUpInside)
            
+            //CARICA da FIREBASE PIANO DI MANUTENZIONE IN pianoManutenzioni
             
+            listaUltimaDataManutenzioneRef.observeSingleEvent(of: .value) { (snapShot) in
+                for item in snapShot.children {
+                  let firebaseData = item as! DataSnapshot
+                    let myPianoManutenzioneFB = firebaseData.value as! [String: Any]
+                    let codiceMacchinario = firebaseData.key
+                    print("Creazione del Piano di manutenzione del macchinario: \(codiceMacchinario)")
+                   
+                    let listaManutenzioni = myPianoManutenzioneFB["ListaManutenzioni"] as? [String]
+                    let listaDataUltimaManutenzione = myPianoManutenzioneFB["ListaDataUltimaManutenzione"] as? [String]
+                    
+                    for (index, element) in listaManutenzioni!.enumerated() {
+                        
+                        let myPianoManutenzione = PianoDiManutenzione(codiceMacchinario: codiceMacchinario, descrizioneManutenzione: element, dataUltimaManutenzione: listaDataUltimaManutenzione![index])
+                        self.pianoManutenzioni.append(myPianoManutenzione)
+                    }
+                    
+                    
+                }
+            }
             
-            manutenzioniDatabaseRef.observe(.value) { (snapShot) in
+       /*   listaUltimaDataManutenzioneRef.observe(.value) { (snapShot) in
+                for item in snapShot.children {
+                  let firebaseData = item as! DataSnapshot
+                    let myPianoManutenzioneFB = firebaseData.value as! [String: Any]
+                    let codiceMacchinario = firebaseData.key
+                    print("Creazione del Piano di manutenzione del macchinario: \(codiceMacchinario)")
+                   
+                    let listaManutenzioni = myPianoManutenzioneFB["ListaManutenzioni"] as? [String]
+                    let listaDataUltimaManutenzione = myPianoManutenzioneFB["ListaDataUltimaManutenzione"] as? [String]
+                    
+                    for (index, element) in listaManutenzioni!.enumerated() {
+                        
+                        let myPianoManutenzione = PianoDiManutenzione(codiceMacchinario: codiceMacchinario, descrizioneManutenzione: element, dataUltimaManutenzione: listaDataUltimaManutenzione![index])
+                        self.pianoManutenzioni.append(myPianoManutenzione)
+                    }
+                    
+                    
+                }
+            } */
+            
+           //CARICA da FIREBASE LE MANUTENZIONI ESEGUITE IN listaManutenzioni
+            
+            manutenzioniDatabaseRef.observeSingleEvent(of: .value) { (snapShot) in
                 //print(snapShot)
                 self.listaManutenzioni = []
                 self.listaManutenzioniFiltrata = []
@@ -81,9 +124,66 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
                     
                 }
                 
+               
+                for item in self.pianoManutenzioni {
+                    
+                    self.utilizzoMacchinariRef.child(item.codiceMacchinario).observeSingleEvent(of: .value) { (data) in
+                        if let dataValue = data.value as? [String: Any] {
+                                                  if let listaLavorazioni: [String] = dataValue["ListaLavorazioni"] as? [String] {
+                                                   
+                                                          self.controllaFrequenzaManutenzione(codiceMacchinario: item.codiceMacchinario, descrizioneManutenzione: item.descrizioneManutenzione, completionHandler2:   { (frequenza) in
+                                                              print("la frequenza di \(item.descrizioneManutenzione) per il macchinario \(item.codiceMacchinario) è: \(frequenza)")
+                                                              item.calcolaProduzioneDaUltimaManutenzione(listaLavorazioni: listaLavorazioni, completionHandler: { (somma) in
+                                                                  print("la somma di \(item.descrizioneManutenzione) per il macchinario \(item.codiceMacchinario) è: \(somma)")
+                                                                  if somma >= frequenza {
+                                                                      let dateFormatter = DateFormatter()
+                                                                      dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                        
+                                                                      if let dataManutenzione = dateFormatter.date(from: item.dataUltimaManutenzione) {
+                                                                     
+                                                                      let item2 = Manutenzione(codiceMacchinario: item.codiceMacchinario, descrizioneManutenzione: item.descrizioneManutenzione, autore: "", dataManutenzione: dataManutenzione, note: "")
+                                                                      self.listaManutenzioniScadute.append(item2)
+                                                                      self.listaRitardoManutenzione.append(somma-frequenza)
+                                                                  }
+                                                                  }
+                                                              })
+                                                          })
+                                                      
+                                                  }
+                                              }
+                    }
+                   /* self.utilizzoMacchinariRef.child(item.codiceMacchinario).observe(.value, with: { (data) in
+                        
+                        if let dataValue = data.value as? [String: Any] {
+                            if let listaLavorazioni: [String] = dataValue["ListaLavorazioni"] as? [String] {
+                             
+                                    self.controllaFrequenzaManutenzione(codiceMacchinario: item.codiceMacchinario, descrizioneManutenzione: item.descrizioneManutenzione, completionHandler2:   { (frequenza) in
+                                        print("la frequenza di \(item.descrizioneManutenzione) per il macchinario \(item.codiceMacchinario) è: \(frequenza)")
+                                        item.calcolaProduzioneDaUltimaManutenzione(listaLavorazioni: listaLavorazioni, completionHandler: { (somma) in
+                                            print("la somma di \(item.descrizioneManutenzione) per il macchinario \(item.codiceMacchinario) è: \(somma)")
+                                            if somma >= frequenza {
+                                                let dateFormatter = DateFormatter()
+                                                dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+  
+                                                if let dataManutenzione = dateFormatter.date(from: item.dataUltimaManutenzione) {
+                                               
+                                                let item2 = Manutenzione(codiceMacchinario: item.codiceMacchinario, descrizioneManutenzione: item.descrizioneManutenzione, autore: "", dataManutenzione: dataManutenzione, note: "")
+                                                self.listaManutenzioniScadute.append(item2)
+                                                self.listaRitardoManutenzione.append(somma-frequenza)
+                                            }
+                                            }
+                                        })
+                                    })
+                                
+                            }
+                        }
+                    })  */
+                    //fine observe
+                }
+                
               
-                // inizio CALCOLA LE MANUTENZIONI SCADUTE aggiunte in listaRitardoManutenzione
-                for item in self.listaManutenzioni {
+                // inizio CALCOLA LE MANUTENZIONI SCADUTE aggiunte in listaRitardoManutenzione versione funzionante
+                /*for item in self.listaManutenzioni {
                     
                     self.utilizzoMacchinariRef.child(item.codiceMacchinario).observe(.value, with: { (data) in
                         
@@ -104,7 +204,7 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
                             }
                         }
                     })
-                }
+                }*/
                // fine CALCOLA LE MANUTENZIONI SCADUTE aggiunte in listaRitardoManutenzione
             }
             
@@ -150,7 +250,7 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
               return listaManutenzioniFiltrata.count
             }
             else {
-                return listaUltimaManutenzione.count
+                return listaManutenzioniScadute.count
             }
             
         }
@@ -169,7 +269,7 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
             }
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "manutenzioneCell", for: indexPath)
-                let item = listaUltimaManutenzione[indexPath.row]
+                let item = listaManutenzioniScadute[indexPath.row]
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yy HH:mm"
                 let dataManutenzioneString = dateFormatter.string(from: item.dataManutenzione)
@@ -218,19 +318,69 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
                 let dataManutenzione = alertController.textFields![0] as UITextField
                 let notaManutenzione = alertController.textFields![1] as UITextField
                 let userID = Auth.auth().currentUser!.email
-                let nuovaManutenzione = ["codiceMacchinario": self.listaUltimaManutenzione[indexPath.row].codiceMacchinario, "descrizioneManutenzione": self.listaUltimaManutenzione[indexPath.row].descrizioneManutenzione, "autore": userID ?? "Ignoto", "dataManutenzione": dataManutenzione.text!, "note": notaManutenzione.text ?? ""]
+                let nuovaManutenzione = ["codiceMacchinario": self.listaManutenzioniScadute[indexPath.row].codiceMacchinario, "descrizioneManutenzione": self.listaManutenzioniScadute[indexPath.row].descrizioneManutenzione, "autore": userID ?? "Ignoto", "dataManutenzione": dataManutenzione.text!, "note": notaManutenzione.text ?? ""]
                 let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
                 activityIndicator.startAnimating()
                 activityIndicator.center = self.view.center
                 self.view.addSubview(activityIndicator)
+               
+                // aggiorno tabella senza ricaricare Firebase 13/04/20
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                let dataManutenzioneNew = dateFormatter.date(from: dataManutenzione.text!)!
+                let manutenzioneNew = Manutenzione(codiceMacchinario: self.listaManutenzioniScadute[indexPath.row].codiceMacchinario, descrizioneManutenzione: self.listaManutenzioniScadute[indexPath.row].descrizioneManutenzione, autore: userID ?? "Ignoto", dataManutenzione: dataManutenzioneNew, note: notaManutenzione.text ?? "")
+                self.listaManutenzioni.append(manutenzioneNew)
+                self.listaManutenzioniFiltrata.append(manutenzioneNew)
+               // let chiaveProvvisoria = self.listaManutenzioniScadute[indexPath.row].codiceMacchinario +  self.listaManutenzioniScadute[indexPath.row].descrizioneManutenzione + dataManutenzione.text!
                 
-                self.manutenzioniDatabaseRef.childByAutoId().setValue(nuovaManutenzione)
+                
+                // aggiorno Firebase
+                //self.manutenzioniDatabaseRef.childByAutoId().setValue(nuovaManutenzione)
+                self.manutenzioniDatabaseRef.childByAutoId().setValue(nuovaManutenzione) { (Error, DatabaseReference) in
+                    if let errore = Error { print(errore)
+                    } else {
+                        self.listaChiaveManutenzioni.append(DatabaseReference.key)
+                        self.listaChiaveManutenzioniFiltrata.append(DatabaseReference.key)
+                        print("la chiave è \(DatabaseReference.key)")
+                    }
+                }
+                
+                //INIZIO: Aggiorna Piano di manutenzione in Firebase se necessario
+                if let i1 = self.pianoManutenzioni.index(where: { (item) -> Bool in
+                    (item.codiceMacchinario == self.listaManutenzioniScadute[indexPath.row].codiceMacchinario)
+                }) {
+                    if let i2 = self.pianoManutenzioni.index(where: { (item) -> Bool in
+                    (item.codiceMacchinario == self.listaManutenzioniScadute[indexPath.row].codiceMacchinario) &&
+                (item.descrizioneManutenzione == self.listaManutenzioniScadute[indexPath.row].descrizioneManutenzione )
+                    }) {
+                
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                        guard let ultimaDataPianoManutenzione = dateFormatter.date(from: self.pianoManutenzioni[i2].dataUltimaManutenzione) else {return}
+                        guard let nuovaDataManutenzione = dateFormatter.date(from: dataManutenzione.text!) else {return}
+                        
+                        if nuovaDataManutenzione > ultimaDataPianoManutenzione {
+                            // cambia in firebase la data alla posizione i2-i1
+                            self.listaUltimaDataManutenzioneRef.child(self.listaManutenzioniScadute[indexPath.row].codiceMacchinario).child("ListaDataUltimaManutenzione").child("\(i2-i1)").setValue(dataManutenzione.text!)
+                            
+                        }
+                        
+                    }
+                }
+                
+                //FINE: Aggiorna Piano di manutenzione in Firebase se necessario
+                
                 
                 activityIndicator.stopAnimating()
                 activityIndicator.removeFromSuperview()
-                _ = self.navigationController?.popViewController(animated: true)
+            //cancello la manutenzione eseguita da quelle da eseguire
+                self.listaManutenzioniScadute.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+              
+                /* aggiunta riga per punto II Gestione Manutenzioni.docx */
+              // /* eliminata riga per punto II Gestione Manutenzioni.docx */  _ = self.navigationController?.popViewController(animated: true)
                 //self.salvaMacchinario(self)
-                self.tableView.reloadData()
+               self.tableView.reloadData()
                 
             })
             
@@ -266,7 +416,7 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
             if sceltaVisualizzazione.selectedSegmentIndex == 0 {
                 macchinario = listaManutenzioniFiltrata[indexPath.row].codiceMacchinario
             } else {
-                macchinario = listaUltimaManutenzione[indexPath.row].codiceMacchinario
+                macchinario = listaManutenzioniScadute[indexPath.row].codiceMacchinario
             }
             
             let handle = self.macchinariRef.child(macchinario!).observe(.value, with: { data in
@@ -310,9 +460,18 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
         override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
                 if sceltaVisualizzazione.selectedSegmentIndex == 0 {
-                //let deleteItem = listaManutenzioniFiltrata[indexPath.row]
+                let itemToDelete = listaManutenzioniFiltrata[indexPath.row]
                 let chiaveToDelete = listaChiaveManutenzioniFiltrata[indexPath.row]
+                if let indice = listaChiaveManutenzioni.firstIndex(of: chiaveToDelete) {
+                    self.listaManutenzioni.remove(at: indice)
+                    self.listaChiaveManutenzioni.remove(at: indice)
+                }
+
+                
                 self.listaManutenzioniFiltrata.remove(at: indexPath.row)
+                
+                self.listaChiaveManutenzioniFiltrata.remove(at: indexPath.row)
+                    
                 
                 // Delete the row from the data source
                 tableView.deleteRows(at: [indexPath], with: .fade)
@@ -320,6 +479,40 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
                 searchBar.text = nil
                 // CANCELLARE DA FIREBASE DATABASE
                self.manutenzioniDatabaseRef.child(chiaveToDelete).removeValue()
+                
+                // AGGIORNARE PIANO DI MANUTENZIONE
+                    let nuovaUltimaDataManutenzione = calcolaDataUltimaManutenzione(codiceMacchinario: itemToDelete.codiceMacchinario, descrizioneManutenzione: itemToDelete.descrizioneManutenzione)
+         
+                    if let i1 = self.pianoManutenzioni.index(where: { (item) -> Bool in
+                        (item.codiceMacchinario == itemToDelete.codiceMacchinario)
+                    }) {
+                        if let i2 = self.pianoManutenzioni.index(where: { (item) -> Bool in
+                            (item.codiceMacchinario == itemToDelete.codiceMacchinario) &&
+                                (item.descrizioneManutenzione == itemToDelete.descrizioneManutenzione )
+                        }) {
+                            
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                            let nuovaDataManutenzioneString = dateFormatter.string(from: nuovaUltimaDataManutenzione)
+                            
+                                // cambia in firebase la data alla posizione i2-i1
+                            self.listaUltimaDataManutenzioneRef.child(itemToDelete.codiceMacchinario).child("ListaDataUltimaManutenzione").child("\(i2-i1)").setValue(nuovaDataManutenzioneString)
+                                
+                            
+                            
+                        }
+                    }
+                    
+                    
+                    
+                        
+                        
+                        
+                    
+                    
+                   
+                
+                    
                 }
                 
                 
@@ -413,7 +606,7 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
             
     func calcolaDataUltimaManutenzione(codiceMacchinario: String, descrizioneManutenzione: String) -> Date {
         
-        let listaFiltrataCodice = listaManutenzioni.filter { (filtro) -> Bool in
+        let listaFiltrataCodice = listaManutenzioniFiltrata.filter { (filtro) -> Bool in
             
             return filtro.codiceMacchinario.lowercased().elementsEqual(codiceMacchinario.lowercased())
             //return filtro.codiceMacchinario.lowercased().contains(codiceMacchinario.lowercased())

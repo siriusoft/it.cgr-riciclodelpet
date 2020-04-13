@@ -141,7 +141,7 @@
 		F489DCD71FF6945B00E61B72 /* it.cgr-riciclodelpetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "it.cgr-riciclodelpetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F489DCDB1FF6945B00E61B72 /* it_cgr_riciclodelpetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = it_cgr_riciclodelpetUITests.swift; sourceTree = "<group>"; };
 		F489DCDD1FF6945B00E61B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F489DCE91FF6BA4B00E61B72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F489DCED1FF6E88300E61B72 /* FbTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbTableViewController.swift; sourceTree = "<group>"; };
 		F49575922211F68E007AD734 /* schedaTecnica.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = schedaTecnica.html; sourceTree = "<group>"; };
 		F4AC890A200A98670049D188 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };

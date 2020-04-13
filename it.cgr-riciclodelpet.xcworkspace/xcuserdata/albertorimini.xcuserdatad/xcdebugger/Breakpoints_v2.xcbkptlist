@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "F8A9A11C-C100-4B74-84BC-61577AA0E06F"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "03E5B64C-A2C3-4585-8ECC-B861C7CB9A4B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3FB5479D-B518-4981-BBD4-A041EA8C01EE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -38,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2B7DAD3A-038D-4454-8C84-F7E9A1963A5E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -54,79 +58,84 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FB225A0F-F067-42E6-96B6-32899D5C7C20"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.262383"
+            timestampString = "589238706.5999219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "503"
+            endingLineNumber = "503"
+            landmarkName = "salvaMacchinario(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FD0AE20A-4FB7-4735-AD37-C23A4222DA01"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.263579"
+            timestampString = "589238706.600703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "593"
-            endingLineNumber = "593"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "598"
+            endingLineNumber = "598"
+            landmarkName = "caricaDatiInDatabase(fotoMacchinarioUrl:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "098975FF-4C9D-4D48-B569-993813E81D0C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.263979"
+            timestampString = "589238706.6012371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "532"
-            endingLineNumber = "532"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "534"
+            endingLineNumber = "534"
+            landmarkName = "salvaMacchinario(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DA79D6ED-2816-4C46-84FE-42C86C198157"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.264322"
+            timestampString = "589238706.601787"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "553"
-            endingLineNumber = "553"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "556"
+            endingLineNumber = "556"
+            landmarkName = "salvaMacchinario(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "02778BBE-7483-4B0F-8D5D-1E4F8429A9F9"
             shouldBeEnabled = "No"
             ignoreCount = "90"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
-            timestampString = "584831690.127589"
+            timestampString = "589569339.742952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -134,15 +143,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "53D437DC-F541-4C77-BBF5-BDF52F664506"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
-            timestampString = "584831690.128091"
+            timestampString = "589569339.743516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "447"
-            endingLineNumber = "447"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "controllaFrequenzaManutenzione(codiceMacchinario:descrizioneManutenzione:completionHandler2:)"
             landmarkType = "7">
             <Actions>
@@ -164,79 +174,84 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DCD0009D-AC45-482E-956F-B9BEB2179C0E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/MacchinariTableViewController.swift"
-            timestampString = "588613356.2648439"
+            timestampString = "589569339.7438819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "inserisciLivello(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F73EAE72-D3EF-4ADB-BAE8-C83B17B497C6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/MacchinariTableViewController.swift"
-            timestampString = "588613356.264998"
+            timestampString = "589569339.744231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "25DF6CC4-FD10-49AF-8E56-FAB42AED5282"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.2650599"
+            timestampString = "589238706.602663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "621"
-            endingLineNumber = "621"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "631"
+            endingLineNumber = "631"
+            landmarkName = "ImageTapped(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "99918C05-8DDF-435E-8BB3-2770C219EFF2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.265466"
+            timestampString = "589238706.603295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "630"
-            endingLineNumber = "630"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "640"
+            endingLineNumber = "640"
+            landmarkName = "ImageTapped(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A1BE6DD0-BACC-4291-84F5-7375FC2F0960"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
-            timestampString = "584831690.129306"
+            timestampString = "589569339.744524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "562"
+            endingLineNumber = "562"
             landmarkName = "filtraSearchBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,15 +259,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "62F6F16F-7069-4665-BAD8-7A5BE35B3901"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
-            timestampString = "584831690.129625"
+            timestampString = "589569339.7448339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "455"
-            endingLineNumber = "455"
+            startingLineNumber = "648"
+            endingLineNumber = "648"
             landmarkName = "controllaFrequenzaManutenzione(codiceMacchinario:descrizioneManutenzione:completionHandler2:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -260,15 +276,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "39D5DC51-B650-469C-BC37-E920FFBB42A2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
-            timestampString = "584831690.129912"
+            timestampString = "589569339.745126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -276,15 +293,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E8191837-AC6B-4816-BD07-6D398F14594A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
-            timestampString = "584831690.130195"
+            timestampString = "589569339.745433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
             landmarkName = "calcolaDataUltimaManutenzione(codiceMacchinario:descrizioneManutenzione:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -292,19 +310,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "73A38F4B-16BC-4787-AF8B-DFCC69248EBC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../Downloads/Flash-Chat-iOS11-master/Flash Chat/LogInViewController.swift"
-            timestampString = "565396963.13846"
+            timestampString = "589238706.6039799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "didReceiveMemoryWarning()"
+            landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "73A38F4B-16BC-4787-AF8B-DFCC69248EBC - df6fa593bd88bd04"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -320,6 +340,7 @@
                   offsetFromSymbolStart = "56">
                </Location>
                <Location
+                  uuid = "73A38F4B-16BC-4787-AF8B-DFCC69248EBC - 9d82c30eb7193466"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -335,6 +356,7 @@
                   offsetFromSymbolStart = "396">
                </Location>
                <Location
+                  uuid = "73A38F4B-16BC-4787-AF8B-DFCC69248EBC - 6f245af1e4f9d064"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -355,67 +377,55 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F913BBD9-CF11-4457-B708-94D91303F97F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../Downloads/Flash-Chat-iOS11-master/Flash Chat/LogInViewController.swift"
-            timestampString = "565396963.13894"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            timestampString = "589238706.60438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "682"
+            endingLineNumber = "682"
+            landmarkName = "controllaUltimaManutenzione(at:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2EF04EA7-97B5-41FF-AD58-A12CD8DFC045"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.266096"
+            timestampString = "589238706.605092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "672"
-            endingLineNumber = "672"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "693"
+            endingLineNumber = "693"
+            landmarkName = "controllaUltimaManutenzione(at:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9C9AB5B1-E73B-437B-9B52-9143072F93F8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.266476"
+            timestampString = "589238706.605886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "683"
-            endingLineNumber = "683"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.266852"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "680"
-            endingLineNumber = "680"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "690"
+            endingLineNumber = "690"
+            landmarkName = "controllaUltimaManutenzione(at:)"
+            landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "9C9AB5B1-E73B-437B-9B52-9143072F93F8 - 2a46c96628b7e2cc"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -431,6 +441,7 @@
                   offsetFromSymbolStart = "1285">
                </Location>
                <Location
+                  uuid = "9C9AB5B1-E73B-437B-9B52-9143072F93F8 - b5698b1e50716aaf"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -451,22 +462,24 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "85537130-CFF4-461E-B511-4BA1714041DB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
-            timestampString = "588613356.267258"
+            timestampString = "589238706.606498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "700"
-            endingLineNumber = "700"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "710"
+            endingLineNumber = "710"
+            landmarkName = "controllaUltimaManutenzione(at:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DC6EE98A-7B9B-493C-A891-AFF0D0C67EDE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -483,6 +496,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AD5F7292-4783-46DA-BD43-5F7B724DAF8E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -499,6 +513,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4DEE48D7-40DB-4915-B811-F8424ECD06CB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -515,6 +530,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4217CFCE-B5A4-43E7-B53F-527A3F37AB21"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -531,6 +547,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "379675AD-DBB0-43D8-85CC-C6451566B87D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -547,6 +564,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "93C27A72-8456-4E8A-AA07-989603F852D6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -563,6 +581,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B8CF323F-029B-4BEB-B76E-A02F7BA0CE21"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -579,6 +598,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "55A0ACA9-C2DE-4F6D-97F1-171EACB079B3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -595,6 +615,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "798392CB-0051-4515-8AB4-F25D2BD6ED42"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -611,6 +632,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7005B265-3834-4B5E-82E4-19FC8EAB3636"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -627,6 +649,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "76565B59-639C-4AE4-8CD6-D99226195A4B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -640,6 +663,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "76565B59-639C-4AE4-8CD6-D99226195A4B - 86fa11b3012c66b1"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -655,6 +679,7 @@
                   offsetFromSymbolStart = "3403">
                </Location>
                <Location
+                  uuid = "76565B59-639C-4AE4-8CD6-D99226195A4B - 3f936e7771c4fde2"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -675,67 +700,72 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F58FC6DD-76E6-40E4-A3B7-742841262CF2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Model/OrdineManutenzione.swift"
-            timestampString = "588613356.26782"
+            timestampString = "589569339.74596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "calcolaDataUltimaManutenzione(codiceMacchinario:descrizioneManutenzione:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6D79403D-735B-4D06-89A2-13291E1B9FD3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Controller/MacchinariTableViewController.swift"
-            timestampString = "588613356.268325"
+            timestampString = "589569339.74631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "inseriscimacchinario(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A51F3589-1E72-4AD5-9C4D-01E999620BB8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Model/OrdineManutenzione.swift"
-            timestampString = "588613356.2683901"
+            timestampString = "589569339.746567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "calcolaDataUltimaManutenzione(codiceMacchinario:descrizioneManutenzione:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1CD24852-82F4-4C34-8311-311E16DB6C47"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Model/OrdineManutenzione.swift"
-            timestampString = "588613356.268702"
+            timestampString = "589569339.7468131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "calcolaDataUltimaManutenzione(codiceMacchinario:descrizioneManutenzione:completion:)"
+            landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "1CD24852-82F4-4C34-8311-311E16DB6C47 - f2c5410ef0bd36c1"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -751,6 +781,7 @@
                   offsetFromSymbolStart = "314">
                </Location>
                <Location
+                  uuid = "1CD24852-82F4-4C34-8311-311E16DB6C47 - e8c29905ce885c65"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -771,49 +802,245 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C54FFD3D-DDA3-46C1-833A-D588A1056FFE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Model/OrdineManutenzione.swift"
-            timestampString = "588613356.269042"
+            timestampString = "589569339.7470551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "calcolaDataUltimaManutenzione(codiceMacchinario:descrizioneManutenzione:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6436B6DC-485A-4D04-A0C8-F09B3FC3046E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Model/OrdineManutenzione.swift"
-            timestampString = "588613356.2693419"
+            timestampString = "589569339.747301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "calcolaDataUltimaManutenzione(codiceMacchinario:descrizioneManutenzione:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7F3F04E9-749C-44C4-AD6C-E2914F695A50"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "it.cgr-riciclodelpet/Model/OrdineManutenzione.swift"
-            timestampString = "588613356.269637"
+            timestampString = "589569339.747552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "calcolaDataUltimaManutenzione(codiceMacchinario:descrizioneManutenzione:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7737C5D5-DD59-41A9-B1F0-63FB5FC33E33"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
+            timestampString = "589569339.747803"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA1D0410-4329-411C-BE7E-8EE56899965F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "484"
+            endingLineNumber = "484"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9673186-6A4F-41B2-8D23-FDCFFEAC5AEB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29250A75-25C9-4C5F-8EC7-F6D89A1A7877"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "778"
+            endingLineNumber = "778"
+            landmarkName = "aggiornaDataUltimaManutenzione(codiceMacchin:descrizioneManut:dataManut:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29250A75-25C9-4C5F-8EC7-F6D89A1A7877 - a000df565c4bc7bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "it_cgr_riciclodelpet.InsertMacchinarioViewController.aggiornaDataUltimaManutenzione(codiceMacchin: Swift.String, descrizioneManut: Swift.String, dataManut: Swift.String) -&gt; ()"
+                  moduleName = "it.cgr-riciclodelpet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/albertorimini/Desktop/SWIFT/it.cgr-riciclodelpet/it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "778"
+                  endingLineNumber = "778"
+                  offsetFromSymbolStart = "179">
+               </Location>
+               <Location
+                  uuid = "29250A75-25C9-4C5F-8EC7-F6D89A1A7877 - 80691425d9d39775"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in it_cgr_riciclodelpet.InsertMacchinarioViewController.aggiornaDataUltimaManutenzione(codiceMacchin: Swift.String, descrizioneManut: Swift.String, dataManut: Swift.String) -&gt; ()"
+                  moduleName = "it.cgr-riciclodelpet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/albertorimini/Desktop/SWIFT/it.cgr-riciclodelpet/it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "778"
+                  endingLineNumber = "778"
+                  offsetFromSymbolStart = "442">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABCF2908-96D9-48C8-B6EB-C8C4D8E65434"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "869"
+            endingLineNumber = "869"
+            landmarkName = "aggiornaPianoManutenzione()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBD1CA0C-0CA8-4C78-B2EA-9FC5AA344C54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "505"
+            endingLineNumber = "505"
+            landmarkName = "salvaMacchinario(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "008C959E-5EDB-4E53-A5A1-E936821DE288"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "773"
+            endingLineNumber = "773"
+            landmarkName = "aggiornaDataUltimaManutenzione(codiceMacchin:descrizioneManut:dataManut:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9682EA0-A415-45F4-B195-45EF78C15183"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "880"
+            endingLineNumber = "880"
+            landmarkName = "aggiornaPianoManutenzione()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C54A6D11-12AF-4E26-8561-84A25DD40228"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/InsertMacchinarioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "822"
+            endingLineNumber = "822"
+            landmarkName = "aggiornaDataUltimaManutenzione(codiceMacchin:descrizioneManut:dataManut:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D3C21E7-DA6F-4545-8399-0615912D091C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "it.cgr-riciclodelpet/Controller/ManutenzioniTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "463"
+            endingLineNumber = "463"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

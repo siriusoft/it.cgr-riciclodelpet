@@ -23,7 +23,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func registerPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToRegistration", sender: self)
+       // performSegue(withIdentifier: "goToRegistration", sender: self)
     }
 }
 
