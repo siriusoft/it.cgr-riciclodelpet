@@ -542,11 +542,11 @@
             <objects>
                 <viewController storyboardIdentifier="ScannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7k1-zy-72g" customClass="ScannerViewController" customModule="it_cgr_riciclodelpet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WHi-ap-vUl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xT-bV-9Pi">
-                                <rect key="frame" x="59" y="475" width="257" height="91"/>
+                                <rect key="frame" x="59" y="495" width="257" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="9rR-0J-gei"/>
                                 </constraints>
@@ -555,7 +555,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHj-Is-KVW">
-                                <rect key="frame" x="0.0" y="588" width="375" height="59"/>
+                                <rect key="frame" x="0.0" y="608" width="375" height="59"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Inserisci">
@@ -566,7 +566,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torcia:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1p-JI-2gx">
-                                <rect key="frame" x="121" y="361" width="51" height="21"/>
+                                <rect key="frame" x="121" y="381" width="51" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="51" id="He9-HK-GAT"/>
                                     <constraint firstAttribute="height" constant="21" id="Iu1-BS-AYK"/>
@@ -576,7 +576,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="usx-5H-rX3">
-                                <rect key="frame" x="180" y="351" width="51" height="31"/>
+                                <rect key="frame" x="180" y="371" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="hDS-1L-ZGZ"/>
                                     <constraint firstAttribute="width" constant="49" id="vxI-mm-oIL"/>
@@ -1942,8 +1942,8 @@
         <scene sceneID="QGX-bU-pQU">
             <objects>
                 <tableViewController title="Dati per Ddt" id="nWx-8E-3jS" customClass="DdtTableViewController" customModule="it_cgr_riciclodelpet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mVt-D7-tlH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" id="mVt-D7-tlH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1954,10 +1954,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Lu-bJ-eUR">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" id="4Lu-bJ-eUR">
                                             <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1980,11 +1980,11 @@
             <objects>
                 <viewController title="Packing List" id="Iv0-jO-egk" customClass="InsertPackingListViewController" customModule="it_cgr_riciclodelpet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aga-KR-Ngw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpc-sQ-Sfe">
-                                <rect key="frame" x="0.0" y="562" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="582" width="375" height="36"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Ar8-nc-A6N"/>
@@ -1997,7 +1997,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tGv-L1-Ndb">
-                                <rect key="frame" x="16" y="94" width="343" height="460"/>
+                                <rect key="frame" x="16" y="94" width="343" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -2673,10 +2673,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="o6P-J2-ZRM"/>
         <segue reference="HJ0-fZ-qb4"/>
         <segue reference="yDv-rb-aS4"/>
         <segue reference="cbs-77-qUq"/>
-        <segue reference="9pv-xt-cjJ"/>
+        <segue reference="Ktv-TZ-PxC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CGR Iogo firma" width="134" height="59"/>

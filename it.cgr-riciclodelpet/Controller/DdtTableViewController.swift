@@ -25,6 +25,10 @@ class DdtTableViewController: UITableViewController {
         let totaleDdtLabel = UILabel()
         totaleDdtLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 30)
         totaleDdtLabel.textAlignment = .center
+        //totaleDdtLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        totaleDdtLabel.minimumScaleFactor = 0.5
+        totaleDdtLabel.adjustsFontSizeToFitWidth = true
+        totaleDdtLabel.adjustsFontForContentSizeCategory = true
        
         headerView.addSubview(totaleDdtLabel)
         
@@ -71,8 +75,20 @@ class DdtTableViewController: UITableViewController {
         return item.count
         } else { return 0 }
     }
+ 
+   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let header = view as? UITableViewHeaderFooterView
+    //header?.textLabel?.font = //UIFont(name: "Futura", size: 14) // change it according to ur requirement
+    //UIFont.boldSystemFont(ofSize: 12)
+    header?.textLabel?.textColor = UIColor.black // change it according to ur requirement
+    header?.textLabel?.minimumScaleFactor = 0.5
+    header?.textLabel?.adjustsFontForContentSizeCategory = true
+    header?.textLabel?.adjustsFontSizeToFitWidth = true
+    
+    }
+    
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let chiave = self.listaChiavi[section]
         let listaPerChiave = articoloDictionary[chiave]
         var totaleColli = 0
@@ -83,18 +99,19 @@ class DdtTableViewController: UITableViewController {
             totaleColli += item.colli
             totaleTara += item.tara
         }
-        let header = "\(chiave): \(totaleKg) Kg, T: \(totaleTara) Kg, \(totaleColli) Colli"
+        let header = "\(chiave):\(totaleKg) Kg,T: \(totaleTara) Kg,\(totaleColli) Colli"
         
         
         
         return header
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ddtList = self.articoloDictionary[listaChiavi[indexPath.section]]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ddtCell", for: indexPath)
         let item = ddtList![indexPath.row]
-        cell.textLabel?.text = "\(item.lotto), \(item.kg) kg, \(item.colli) colli"
+        cell.textLabel?.text = "\(item.lotto), \(item.kg) kg, \(item.colli) colli. Approvato: \(item.qualita)"
         // Configure the cell...
         
         return cell

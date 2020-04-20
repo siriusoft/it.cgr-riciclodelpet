@@ -233,7 +233,7 @@ class InsertPackingListViewController: UIViewController, UITableViewDelegate, UI
               
               
                     self.downloadQualita(lotto: lotto) { (qualita) in
-                    let articolo = Articolo(articolo: codice, lotto: lotto, kg: totale, colli: i, tara: totaleTara, qualita: qualita)
+                            let articolo = Articolo(articolo: "CQ:" + qualita + ", " + codice, lotto: lotto, kg: totale, colli: i, tara: totaleTara, qualita: qualita)
                         self.listaArticoliPerDdt.append(articolo)
                     passaggi += 1
                   

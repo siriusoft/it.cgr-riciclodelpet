@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 protocol ShowPackingList {
    func AddItemtoPackingList(dettaglioPackingList: PackingList)
@@ -21,10 +22,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
 
     var packingListCompleto: PackingList?
-   
+    let qualitaDatabaseRef: DatabaseReference = Database.database().reference().child("qualita")
     
     var barCodeString: String?
-    
+    var previousBarcode: String?
     @IBOutlet weak var torchiaSwitch: UISwitch!
     @IBOutlet weak var scannedLabelText: UILabel!
     let codeFrame:UIView = {
@@ -39,6 +40,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        previousBarcode = ""
         
         // Do any additional setup after loading the view, typically from a nib.
     
@@ -166,16 +168,39 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         // controllo che l'item non sia già stato inserito nell'array packingList
         
         if let barCode = barCodeString {
+            if barCode == previousBarcode! {
+                print("Funzione per evitare doppio click")
+                return }
+            previousBarcode = barCode
             let myBarCode = CodiceBarra(barCode: barCode)
             if let itemToPackingList = myBarCode.riconosciQrCode() {
                 
                 if contenutoInPackingList(qrCode: barCode) {
                 print("Collo già presente nella lista")
+                    previousBarcode = ""
                     let alert = UIAlertController(title: "Attenzione!", message: "Collo già presente nella lista, impossibile aggiungerlo!", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                packingListCompleto!.listaColli?.append(itemToPackingList)
+                //Verifico la qualità del lotto e se non conforme chiedo verifica
+                    downloadQualita(lotto: itemToPackingList.lotto) { (qualita) in
+                        if qualita == "Si"{ self.inserisciCollo(itemToPackingList: itemToPackingList)}
+                        else {
+                            let alert = UIAlertController(title: "Attenzione!", message: "Collo Non conforme o in attesa di approvazione, vuoi aggiungerlo?", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Si", style: UIAlertActionStyle.default, handler: { action in
+                                self.inserisciCollo(itemToPackingList: itemToPackingList)
+                                self.dismiss(animated: true, completion: nil)
+                            }))
+                            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: { action in
+                                self.dismiss(animated: true, completion: nil)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    
+                    }
+                    
+            // eliminato perchè creata la funzione inserisciCollo
+             /*   packingListCompleto!.listaColli?.append(itemToPackingList)
                 
                     UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseIn, animations: {
                         self.scannedLabelText.backgroundColor = UIColor.green
@@ -188,7 +213,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                         self.scannedLabelText.backgroundColor = UIColor.white
                     }
                 delegate?.AddItemtoPackingList(dettaglioPackingList: packingListCompleto!)
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)*/
                 
                 }
             }
@@ -272,5 +297,42 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         }
     }
 
+ 
+    func downloadQualita(lotto: String,completion: @escaping (String) -> Void) {
+        
+        qualitaDatabaseRef.child(lotto).observeSingleEvent(of: .value, with: { (snap) in
+          guard let schedaTecnica = snap.value as? [String: Any]
+                else {
+                    completion("Scheda tecnica mancante")
+                    return
+                    
+            }
+            
+            guard let approvato = schedaTecnica["Approvato"] else {return}
+        completion(approvato as! String)
+       })
+        
+    }
     
+    func inserisciCollo(itemToPackingList: ItemProdottoFinito) {
+    //Verifico la qualità del lotto e se non conforme chiedo verifica
+        
+        //if let itemToPackingList.lotto
+        previousBarcode = ""
+    packingListCompleto!.listaColli?.append(itemToPackingList)
+    
+        UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseIn, animations: {
+            self.scannedLabelText.backgroundColor = UIColor.green
+            
+        }) { (true) in
+            print("Inserito Collo nel PackingList")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            // do stuff 1 second later
+            self.scannedLabelText.backgroundColor = UIColor.white
+        }
+    delegate?.AddItemtoPackingList(dettaglioPackingList: packingListCompleto!)
+    self.dismiss(animated: true, completion: nil)
+    
+    }
 }

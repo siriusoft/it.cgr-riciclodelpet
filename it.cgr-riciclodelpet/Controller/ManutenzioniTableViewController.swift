@@ -70,25 +70,7 @@ class ManutenzioniTableViewController: UITableViewController, UISearchBarDelegat
                 }
             }
             
-       /*   listaUltimaDataManutenzioneRef.observe(.value) { (snapShot) in
-                for item in snapShot.children {
-                  let firebaseData = item as! DataSnapshot
-                    let myPianoManutenzioneFB = firebaseData.value as! [String: Any]
-                    let codiceMacchinario = firebaseData.key
-                    print("Creazione del Piano di manutenzione del macchinario: \(codiceMacchinario)")
-                   
-                    let listaManutenzioni = myPianoManutenzioneFB["ListaManutenzioni"] as? [String]
-                    let listaDataUltimaManutenzione = myPianoManutenzioneFB["ListaDataUltimaManutenzione"] as? [String]
-                    
-                    for (index, element) in listaManutenzioni!.enumerated() {
-                        
-                        let myPianoManutenzione = PianoDiManutenzione(codiceMacchinario: codiceMacchinario, descrizioneManutenzione: element, dataUltimaManutenzione: listaDataUltimaManutenzione![index])
-                        self.pianoManutenzioni.append(myPianoManutenzione)
-                    }
-                    
-                    
-                }
-            } */
+       
             
            //CARICA da FIREBASE LE MANUTENZIONI ESEGUITE IN listaManutenzioni
             
